@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="TESTE_CSS.cSS">
+</head>
+<body>
+    <!-- Logo -->
+    <div class="container">
+        <div class="circulo">
+            <div class="logo">
+                <img class="logo2" src="./2.PNG" alt="some text" >
+            </div>
+        </div>
+        <!-- Logo -->
+
+        <div id="calculadora">
+            <ul>
+                <li class="liLogo">
+                    <img class="logo1" src="./Soytech_3.PNG" alt="some text">
+                </li>
+                <li class="liLogo">
+                    <span class="fntTitulo">Calculadora</span>
+                </li>
+                <li class="liLogo">
+                    <span class="fntTitulo">Financeira</span>
+                </li>
+            </ul>
+
+            <!-- Inputs -->
+            <div class="cont">
+                <div class="continput">
+                    <ul>
+                        <li class="liInput">
+                            <span class="fntTexto1">Faturamento por hectare:</span>
+                        </li>
+                        <li class="liInput">
+                            <input id="input_faturamento" class="inputTipo" type="text">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="continput">
+
+                    <ul>
+                        <li class="liInput">
+                            <span class="fntTexto1">Quatidade de hectares:</span>
+                        </li>
+                        <li class="liInput">
+                            <input id="input_hec" type="number" placeholder="Unidade">
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="liInput">
+                            <span class="fntTexto1">Prejuizo por safra:</span>
+                        </li>
+                        <li class="liInput">
+                            <input  id="input_prejuizo"> 
+                        </li>
+                    </ul>
+                </div>
+
+                
+            </div>
+            <!-- Inputs -->
+
+            <!-- Botao -->
+            <div class="botao1">
+                <button onclick="valor_sem_produto()">Calcular sem SOYTECH</button>
+            </div>
+        </div>
+        <!-- Botao -->
+    </div>
+</body>
+</html>
+
+<script>
+
+    var reset = calculadora.innerHTML;
+
+
+              function valor_sem_produto() { 
+            var faturamento = Number(input_faturamento.value) 
+            var hectares = Number(input_hec.value)
+            var prejuizo = Number(input_prejuizo.value)
+
+            var receita_perda = (hectares * faturamento) - prejuizo
+            var receita = (hectares * faturamento)
+            var porcentagem_perda = (prejuizo * 100) / receita
+
+            calculadora.innerHTML = `
+             <span class= "fntTexto2 espaco">SEM HELPSOY</span><br>
+             <span class= "fntTexto2 espaco">Seu faturamento: ${receita} por safra </span><br>
+             <span class= "fntTexto2 espaco">Sua Perda:${prejuizo} por safra </span><br>
+             <span class= "fntTexto2 espaco">Sua Receita final: ${receita_perda} </span><br>
+             <span class= "fntTexto2 espaco">Você perdeu aproximadamente ${porcentagem_perda} %. </span><br>
+
+            <div class="botao2">
+                <button onclick="valor_com_produto()">Calcular com SOYTECH</button>
+            </div> 
+        `
+            
+         }
+
+        function valor_com_produto() {
+            reset
+            var faturamento = Number(input_faturamento.value) 
+            var hectares = Number(input_hec.value)
+            var prejuizo = Number(input_prejuizo.value)
+
+            var receita_perda = (hectares * faturamento) - prejuizo
+            var receita = (hectares * faturamento)
+            var porcentagem_perda = (prejuizo * 100) / receita
+            var help = prejuizo * 0.70
+            var valor_final = receita - help
+
+            calculadora.innerHTML = `
+            <hr>
+            <span class= "fntTexto2 espaco">COM HELPSOY</span><br> 
+            <span class= "fntTexto2 espaco">Seu faturamento: ${receita} por safra </span><br>
+            <span class= "fntTexto2 espaco">Sua Perda:${prejuizo} por safr </span> <br>
+            <span class= "fntTexto2 espaco">Sua Receita final: ${receita_perda} </span> <br>
+            <span class= "fntTexto2 espaco">Você perdeu aproximadamente ${porcentagem_perda} %.</span> <br>
+            <span class= "fntTexto2 espaco">A partir de resultados registrados com a utilização do produto HelpSoy, sua receita com prejuizo reduzido em 30% ficou ${valor_final} </span>
+            <hr> `
+            
+        }
+
+</script>
+
