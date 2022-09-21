@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Simulador financeiro - Agrisoft </title>
+    </head>
+    <body>
+        <h1>Simulador Financeiro</h1>
+    
+        Faturamento por hectare:<br>
+        <input id="input_faturamento"> 
+        <br>
+
+        Quantos hectares você produz:<br> 
+        <input id="input_hec">
+        <br>
+
+        Prejuizo por safra:<br>
+        <input id="input_prejuizo"> 
+        <br> 
+
+        <button onclick="valor_sem_produto()">Confira a receita sem o nosso produto </button> <br>
+        <button onclick="valor_com_produto()">Confira a receita com o nosso produto</button> <br>
+
+        <div id="div_resultado"></div> <br>
+        
+    </body>
+    </html>
+    
+    <script>
+       
+        function valor_sem_produto() { 
+            var faturamento = Number(input_faturamento.value) 
+            var hectares = Number(input_hec.value)
+            var prejuizo = Number(input_prejuizo.value)
+
+            var receita_perda = (hectares * faturamento) - prejuizo
+            var receita = (hectares * faturamento)
+            var porcentagem_perda = (prejuizo * 100) / receita
+
+            div_resultado.innerHTML = `
+            SEM HELPSOY<br>
+            Seu faturamento: ${receita} por safra<br>
+            Sua Perda:${prejuizo} por safra<br>
+            Sua Receita final: ${receita_perda}<br>
+            Você perdeu aproximadamente ${porcentagem_perda} %.<br>
+            `
+         }
+
+        function valor_com_produto() {
+            var faturamento = Number(input_faturamento.value) 
+            var hectares = Number(input_hec.value)
+            var prejuizo = Number(input_prejuizo.value)
+
+            var receita_perda = (hectares * faturamento) - prejuizo
+            var receita = (hectares * faturamento)
+            var porcentagem_perda = (prejuizo * 100) / receita
+            var help = prejuizo * 0.70
+            var valor_final = receita - help
+
+            div_resultado.innerHTML = `
+            COM HELPSOY<br>
+            Seu faturamento: ${receita} por safra<br>
+            Sua Perda:${prejuizo} por safra<br>
+            Sua Receita final: ${receita_perda}<br>
+            Você perdeu aproximadamente ${porcentagem_perda} %.<br>
+            A partir de resultados registrados com a utilização do produto HelpSoy, sua receita com prejuizo reduzido em 30% ficou ${valor_final}
+        `
+        }
+
+</script>
+
+
+<!--
+    SEM HELPSOY <br>
+            
+
+-->
