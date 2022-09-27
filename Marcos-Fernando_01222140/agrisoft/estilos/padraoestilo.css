@@ -115,6 +115,8 @@ footer {
     color: aliceblue;
 }
 
+/* DIV DE SUGESTÕES E LAMENTAÇÕES */
+
 .assistencia {
     display: flex;
     flex-direction: row;
@@ -124,4 +126,35 @@ footer {
 
 .assistencia-texto {
     color: aliceblue;
+}
+
+.textinho {
+    margin: 8px;
+    color: aliceblue;
+}
+
+.input_assist {
+    border-radius: 15px;
+    height: 25px;
+    font-family: 'Montserrat', sans-serif;    
+    width: 220px;
+    text-align: center;
+}
+
+.botao-assist {
+    color: black;
+    background-color: aliceblue;
+    border-radius: 15px;
+    padding: 3px;
+    margin: 20px 5px;
+    box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    width: 100px;
+    font-family: 'Montserrat', sans-serif;  
+    font-weight: 800;
+}
+
+.botao-assist:hover {
+    background-color: chartreuse;
+    opacity: 70%;
 }

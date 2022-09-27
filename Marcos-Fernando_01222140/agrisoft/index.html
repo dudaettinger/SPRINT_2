@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/padraoestilo.css">
     <link rel="stylesheet" href="estilos/index.css">
+    <script src="assistencia.js"></script>
     <title>Agrisoft</title>
 </head>
 <body>
@@ -73,9 +74,13 @@
                     <p class="texto">@agrisoft</p>
                 </p>            
             </div>
+
+            <!--AQUI É A ASSISTENCIA / FEEDBACK-->
             <div class="assistencia">
                 <p class="assistencia-texto">
-                    Sugestões e Lamentações: <br> <input id="" placeholder="Digite aqui seu comentário">
+                    <p class="textinho">Sugestões e Lamentações:</p><br>
+                    <input class="input_assist" id="input_comentario" placeholder="Digite aqui seu comentário">
+                    <button class="botao-assist" onclick="enviar()">Enviar</button>
                 </p>
             </div>
         
