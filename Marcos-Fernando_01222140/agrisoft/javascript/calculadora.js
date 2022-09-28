@@ -13,7 +13,7 @@
 
 
         calculadora.innerHTML = `
-        <center style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <center class="centerJS">
         
         <div style="margin: 40px 0;">Sem SoyTech<br>
         Seu faturamento: ${receita} por safra<br>
