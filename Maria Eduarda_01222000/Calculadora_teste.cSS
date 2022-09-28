@@ -149,16 +149,6 @@ button{
     width:33.3vw;
 }
 
-.select{
-
-    border-radius: 20px;
-    background-color: rgb(5, 59, 59);
-    color: white;
-    margin-left: 45px;
-    cursor: pointer;
-    
-}
-
 
 .botao2 {
     display: flex;
@@ -177,19 +167,5 @@ button{
     margin-left: 3vh;   
 }
 
-.verde{
-    border-radius: 20px;
-    background-color: rgb(55, 165, 4);
-    color: white;
-    margin-left: 45px;
-    cursor: pointer;
-}
 
-.vermelho{
-    border-radius: 20px;
-    background-color: rgb(241, 0, 0);
-    color: white;
-    margin-left: 45px;
-    cursor: pointer;
-}
 
