@@ -1,0 +1,158 @@
+.cadastro {
+    display: flex;
+    background-image: url("https://img2.goodfon.com/wallpaper/nbig/f/aa/soybean-soia-pole-plantatsiia-zelen-derevia-tuman-utro-rassv.jpg");
+    padding: 20vh;
+    background-size: cover;
+    color: aliceblue;
+    font-size: xx-large;
+    font-weight: 600;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+}
+
+.cadastro {
+    display: flex;
+    background-color: white;
+
+}
+
+.caixa-formulario p {
+    margin-top: 20px;
+    color: black;
+    font-size: small;
+}
+
+.logo {
+    padding: 0;
+    margin: 0;
+    max-width: 100px;
+}
+
+.menu-navegacao {
+    margin: 0;
+    display: flex;
+    gap: 50px;
+}
+
+.tracinho {
+    cursor: auto;
+    font-size: large;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.menu-navegacao-item {
+    font-weight: 600;
+    font-size: 15px;
+    color: aliceblue;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: space-around;
+}
+
+.menu-navegacao-item:hover {
+    opacity: 0.50;
+    animation-delay: 5ms;
+    color: yellow;
+    border-radius: 10px;
+}
+
+/* cadastro do site */
+
+.banner {
+
+    background-image: url("./assets/img/bg-jelly-fish-para_outras_pags.png");
+    padding: 100px 0;
+    background-size: cover;
+    height: 95vh;
+
+}
+
+.banner .container {
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+
+.caixa-formulario {
+    background-color: rgb(245, 236, 236);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: -215px;
+    height: 80vh;
+
+}
+
+.caixa-formulario span {
+    color: rgba(28, 60, 89, 1);
+    margin-bottom: 35px;
+    text-transform: uppercase;
+}
+
+
+.caixa-formulario .campo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 30vw;
+}
+
+.caixa-formulario .campo label {
+    color: rgba(28, 60, 89, 1);
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.caixa-formulario .campo input {
+    padding: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    border-bottom: 2px solid #32b9cd;
+    width: 80%;
+    outline: none;
+    transition: 0.8s ease-in-out;
+
+}
+
+.caixa-formulario .campo input:hover {
+    border: none;
+    border-bottom: 2px solid green;
+    -webkit-transform: scale(1.08);
+    -ms-transform: scale(1.08);
+    transform: scale(1.08);
+}
+
+
+.caixa-formulario button {
+    margin-top: 20px;
+    width: 80%;
+    color: #fff;
+    background-color: rgba(28, 60, 89, 1);
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.8s ease-in-out;
+
+}
+
+.caixa-formulario button:hover {
+    opacity: 80%;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75);
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.logo_site {
+    height: 30vw;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
