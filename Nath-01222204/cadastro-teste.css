@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-* {
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -78,6 +76,16 @@ header {
 
 /* cadastro do site */
 
+.empresa{
+
+ background-color: red;
+}
+
+
+
+
+
+
 .banner {
 
     background-image: url("./assets/img/bg-jelly-fish-para_outras_pags.png");
@@ -90,18 +98,18 @@ header {
 .banner .container {
     justify-content: center;
     align-items: center;
-    height: 10%;
+    height: 50%;
 }
 
 .caixa-formulario {
     background-color: rgb(245, 236, 236);
-    border-radius: 30px;
+    border-radius: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     margin: -215px;
-    height: 95vh;
+    height: 75vh;
 
 }
 
@@ -111,6 +119,26 @@ header {
     text-transform: uppercase;
 }
 
+.campo_cadastro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+fieldset {
+    border: 1px solid #32b9cd;
+    padding: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+legend {
+    color: black;
+}
 
 .caixa-formulario .campo {
     display: flex;
@@ -127,11 +155,11 @@ header {
 }
 
 .caixa-formulario .campo input {
-    padding: 20px;
+    padding: 10px;
     border: none;
     background-color: rgba(255, 255, 255, 0);
     border-bottom: 2px solid #32b9cd;
-    width: 90%;
+    width: 100%;
     outline: none;
     transition: 0.8s ease-in-out;
 
@@ -140,9 +168,9 @@ header {
 .caixa-formulario .campo input:hover {
     border: none;
     border-bottom: 2px solid green;
-    -webkit-transform: scale(1.08);
-    -ms-transform: scale(1.08);
-    transform: scale(1.08);
+    -webkit-transform: scale(1.06);
+    -ms-transform: scale(1.06);
+    transform: scale(1.06);
 }
 
 
@@ -168,7 +196,6 @@ header {
     -ms-transform: scale(1.05);
     transform: scale(1.05);
 }
-
 
 .logo_site {
 
@@ -259,4 +286,17 @@ footer {
 
 .assistencia-texto {
     color: aliceblue;
+}
+
+.box-great {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.box-small {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 80%;
 }
