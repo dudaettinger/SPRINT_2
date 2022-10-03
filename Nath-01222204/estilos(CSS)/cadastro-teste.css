@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-* {
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -78,6 +76,16 @@ header {
 
 /* cadastro do site */
 
+.empresa{
+
+ background-color: red;
+}
+
+
+
+
+
+
 .banner {
 
     background-image: url("./assets/img/bg-jelly-fish-para_outras_pags.png");
@@ -97,11 +105,11 @@ header {
     background-color: rgb(245, 236, 236);
     border-radius: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     margin: -215px;
-    height: 80vh;
+    height: 75vh;
 
 }
 
@@ -111,6 +119,26 @@ header {
     text-transform: uppercase;
 }
 
+.campo_cadastro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+fieldset {
+    border: 1px solid #32b9cd;
+    padding: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+legend {
+    color: black;
+}
 
 .caixa-formulario .campo {
     display: flex;
@@ -131,7 +159,7 @@ header {
     border: none;
     background-color: rgba(255, 255, 255, 0);
     border-bottom: 2px solid #32b9cd;
-    width: 80%;
+    width: 100%;
     outline: none;
     transition: 0.8s ease-in-out;
 
@@ -140,28 +168,29 @@ header {
 .caixa-formulario .campo input:hover {
     border: none;
     border-bottom: 2px solid green;
-    -webkit-transform: scale(1.08);
-    -ms-transform: scale(1.08);
-    transform: scale(1.08);
+    -webkit-transform: scale(1.06);
+    -ms-transform: scale(1.06);
+    transform: scale(1.06);
 }
 
 
 .caixa-formulario button {
-    margin-top: 20px;
-    width: 80%;
+    margin-top: 10px;
+    width: 30%;
     color: #fff;
     background-color: rgba(28, 60, 89, 1);
-    padding: 10px 20px;
+    padding: 0px 20px;
     font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius:30px;
     cursor: pointer;
     transition: 0.8s ease-in-out;
+    height: 4vh;
 
 }
 
 .caixa-formulario button:hover {
-    opacity: 80%;
+    opacity: 50%;
     box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75);
     -webkit-transform: scale(1.05);
     -ms-transform: scale(1.05);
@@ -257,4 +286,17 @@ footer {
 
 .assistencia-texto {
     color: aliceblue;
+}
+
+.box-great {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.box-small {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 80%;
 }
