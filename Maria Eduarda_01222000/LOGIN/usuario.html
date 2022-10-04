@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="padraoestilo.css">
+    <link rel="stylesheet" href="usuario.css">
+    <title>Agrisoft</title>
+    <link rel="icon" href="imgs/logo_agrisoft.png">
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="imgs/logo_agrisoft.png" alt="logo">
+        <nav class="menu-navegacao">
+            <a class="menu-navegacao-item" href="index.html">Página Inicial</a>
+            <a class="menu-navegacao-item" href="">Sobre nós</a>
+            <a class="menu-navegacao-item" href="">Simulador Financeiro</a>
+            <p class="tracinho">|</p>
+            <a class="menu-navegacao-item" href="cadastro.html">Cadastro</a>
+            <a class="menu-navegacao-item" href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main>
+
+      
+        <div class="container"> 
+
+            <div class="janela">
+                <div class="header-left">
+                    <h1>Agrisoft</h1>
+        
+             <!-- VER ONDE ESSE B_USUARIO ENCONTRA -->
+
+                    <div class="hello">
+                        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                    </div>
+        
+                    <div class="btn-nav-white">
+                        <a href="./cards.html">
+                            <h3>Fazenda</h3>
+                        </a>
+                    </div>
+        
+                    <div class="btn-nav">
+        
+                        <h3>Gráficos</h3>
+        
+                    </div>
+        
+                    <div class="btn-nav-white">
+                        <a href="./mural.html">
+                            <h3>Sugestões</h3>
+                        </a>
+                    </div>
+        
+                    <div class="btn-logout" onclick="limparSessao()">
+                        <h3>Sair</h3>
+                    </div>
+        
+                </div>
+        </div>
+
+    
+
+      
+
+
+
+    </main>
+
+    <footer>
+        
+<!--CONTATOS E ICONES RODAPE SUPERIOR-->
+<div class="div-contato">
+    <img class="logo_rdp" src="./imgs/logo_agrisoft.png" alt="logo_agrisoft" style="max-width: 100px;">
+    <div class="contato">
+        <p class="contato-paragrafo">
+            <img class="contato-logo" src="./imgs/facebook.png" alt="logo feice">
+            <p class="texto">AgriSoft</p>
+        </p>
+
+        <p class="contato-paragrafo">
+            <img class="contato-logo" src="./imgs/instagram.png" alt="logo feice">
+            <p class="texto">@agrisoft</p>
+        </p>
+
+        <p class="contato-paragrafo">
+            <img class="contato-logo" src="./imgs/twitter.png" alt="logo feice">
+            <p class="texto">@agrisoft</p>
+        </p>            
+    </div>
+
+    <!--AQUI É A ASSISTENCIA / FEEDBACK-->
+    <div class="assistencia">
+        <p class="assistencia-texto">
+            <p class="textinho"> Sugestões:</p><br>
+            <input class="input_assist" id="input_comentario" placeholder="Digite aqui seu comentário">
+            <button class="botao-assist" onclick="enviar()">Enviar</button>
+        </p>
+    </div>
+
+</div>
+<!--AQUI COMEÇA O RODAPE DO RODAPE-->
+<div class="container-rodape">
+    <div class="rodape">
+        <a class="rodape-item" href="#">Políticas de Privacidade</a>
+        <a class="rodape-item" href="#">Termos de serviço</a>
+        <a class="rodape-item" href="#">Configurações de Cookies da Página</a>
+    </div>
+
+    <a class="asft" href="#">&copy;2022, AGRISOFT</a>
+</div>
+        
+    </footer>
+
+</body>
+
+</html>
+

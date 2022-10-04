@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+    .container {
+        background-size: cover;
+        width: 300px;
+        height: 800px;
+        background-color:rgba(0, 0, 0, 0.8);
+        color: rgb(253, 253, 253);
+        }
+
+    main{
+        display: flex;
+        justify-content: space-between;
+        background-image: url("https://img2.goodfon.com/wallpaper/nbig/f/aa/soybean-soia-pole-plantatsiia-zelen-derevia-tuman-utro-rassv.jpg");
+        background-size: cover;
+    }
