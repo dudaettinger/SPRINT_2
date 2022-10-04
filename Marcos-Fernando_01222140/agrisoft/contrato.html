@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acquatec</title>
-    <link rel="stylesheet" href="cadastro_site.css">
+    <link rel="stylesheet" href="estilos/padraoestilo.css">
+    <link rel="stylesheet" href="estilos/contrato.css">
+    <script src="./javascript/assistencia.js"></script>
+    <link rel="icon" href="./imgs/icon_agrisoft.png">
+    <title>Agrisoft</title>
 </head>
-
 <body>
-    <!--HEADER-->
     <header>
-        <img class="logo" src="./do_Site_logo_agrisoft.png" alt="logo">
+        <img class="logo" src="imgs/logo_agrisoft.png" alt="logo">
         <nav class="menu-navegacao">
             <a class="menu-navegacao-item" href="index.html">Página Inicial</a>
             <a class="menu-navegacao-item" href="#sobre_nos">Sobre nós</a>
-            <a class="menu-navegacao-item" href="">Simulador Financeiro</a>
+            <a class="menu-navegacao-item" href="calculadora.html">Simulador Financeiro</a>
             <p class="tracinho">|</p>
-            <a class="menu-navegacao-item" href="cadastro.html">Cadastro</a>
-            <a class="menu-navegacao-item" href="login.html">Login</a>
+            <a class="menu-navegacao-item" href="contrato.html">Contrate-nos</a>
+            <a class="menu-navegacao-item" href="cliente.html">Já sou cliente</a>
         </nav>
     </header>
-    <!-- come;o do site -->
+    
+    
     <main>
         <div class="cadastro">
             <section class="banner">
@@ -44,46 +45,45 @@
                         <div class="campo">
                             <label for="senha">Confirmação de Senha</label>
                             <input class="in_campo" type="password" name="confirmacao_senha" id="senha"
-                                placeholder="*********">
+                                 placeholder="*********">
                         </div>
                         <p>Já tem login? <a href="./login.html">Login</a></p>
                         <button>Cadastrar</button>
                     </div>
                 </div>
             </section>
-    </main>
-
-
-
-
-
-
+     </main>
+    
     <footer>
         <!--CONTATOS E ICONES RODAPE SUPERIOR-->
         <div class="div-contato">
-            <img class="logo_rdp" src="./do_Site_logo_agrisoft.png" alt="logo_agrisoft" style="max-width: 100px;">
+            <img class="logo_rdp" src="./imgs/logo_agrisoft.png" alt="logo_agrisoft" style="max-width: 100px;">
             <div class="contato">
                 <p class="contato-paragrafo">
-                    <img class="contato-logo" src="./facebook.png" alt="logo feice">
-                <p class="texto">AgriSoft</p>
+                    <img class="contato-logo" src="./imgs/facebook.png" alt="logo feice">
+                    <p class="texto">AgriSoft</p>
                 </p>
 
                 <p class="contato-paragrafo">
-                    <img class="contato-logo" src="./instagram.png" alt="logo feice">
-                <p class="texto">@agrisoft</p>
+                    <img class="contato-logo" src="./imgs/instagram.png" alt="logo feice">
+                    <p class="texto">@agrisoft</p>
                 </p>
 
                 <p class="contato-paragrafo">
-                    <img class="contato-logo" src="twitter.png" alt="logo feice">
-                <p class="texto">@agrisoft</p>
-                </p>
+                    <img class="contato-logo" src="./imgs/twitter.png" alt="logo feice">
+                    <p class="texto">@agrisoft</p>
+                </p>            
             </div>
+
+            <!--AQUI É A ASSISTENCIA / FEEDBACK-->
             <div class="assistencia">
                 <p class="assistencia-texto">
-                    Sugestões e Lamentações: <br> <input id="" placeholder="Digite aqui seu comentário">
+                    <p class="textinho">Sugestões:</p><br>
+                    <input class="input_assist" id="input_comentario" placeholder="Digite aqui seu comentário">
+                    <button class="botao-assist" onclick="enviar()">Enviar</button>
                 </p>
             </div>
-
+        
         </div>
         <!--AQUI COMEÇA O RODAPE DO RODAPE-->
         <div class="container-rodape">
@@ -97,6 +97,6 @@
         </div>
     </footer>
 
-</body>
 
+</body>
 </html>

@@ -1,22 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-
-header {
-    background-color: black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    text-decoration: none;
-    height: 12vh;
-}
-
 .cadastro {
     display: flex;
     background-image: url("https://img2.goodfon.com/wallpaper/nbig/f/aa/soybean-soia-pole-plantatsiia-zelen-derevia-tuman-utro-rassv.jpg");
@@ -169,92 +150,9 @@ header {
 }
 
 .logo_site {
-
     height: 30vw;
     width: 30vw;
     display: flex;
     justify-content: center;
     align-items: center;
-
-
-}
-
-
-
-footer {
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-
-}
-
-/*rodape*/
-.rodape {
-    margin: 20px;
-    display: flex;
-    gap: 30px;
-
-}
-
-.container-rodape {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-}
-
-.rodape-item {
-    color: aliceblue;
-    font-size: 10px;
-}
-
-.asft {
-    color: aliceblue;
-    margin: 20px;
-    font-size: 10px;
-}
-
-/*contato*/
-
-.div-contato {
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 90%;
-}
-
-.contato {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-}
-
-.contato-paragrafo {
-    display: flex;
-    justify-content: center;
-    margin: 15px;
-}
-
-.contato-logo {
-    max-width: 20px;
-}
-
-.texto {
-    color: aliceblue;
-}
-
-.assistencia {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.assistencia-texto {
-    color: aliceblue;
 }

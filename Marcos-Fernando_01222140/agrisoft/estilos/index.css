@@ -6,12 +6,12 @@ html {
 
 .container {
     display: flex;
-    background-image: url("../imgs/bgimgmain.jpeg");
+    background-image: url("../imgs/background.jpg");
     padding: 40vh;
     background-size: cover;
-    color: aliceblue;
+    color: black;
     font-size: xx-large;
-    font-weight: 600;
+    font-weight: bolder;
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
 }

@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./estilos/padraoestilo.css">
     <link rel="stylesheet" href="./estilos/calculadora.css">
+    <link rel="icon" href="./imgs/icon_agrisoft.png">
     <script src="./javascript/calculadora.js"></script>
 </head>
 <body>
@@ -15,68 +16,42 @@
         <nav class="menu-navegacao">
             <a class="menu-navegacao-item" href="index.html">Página Inicial</a>
             <a class="menu-navegacao-item" href="#sobre_nos">Sobre nós</a>
-            <a class="menu-navegacao-item" href="">Simulador Financeiro</a>
+            <a class="menu-navegacao-item" href="calculadora.html">Simulador Financeiro</a>
             <p class="tracinho">|</p>
-            <a class="menu-navegacao-item" href="cadastro.html">Cadastro</a>
-            <a class="menu-navegacao-item" href="login.html">Login</a>
+            <a class="menu-navegacao-item" href="contrato.html">Contrate-nos</a>
+            <a class="menu-navegacao-item" href="cliente.html">Já sou cliente</a>
         </nav>
     </header>
 
     <main>
-     
-    <div class="container">
-        <div id="calculadora">
-           <!--- <ul>
+        <div class="container">
+            <div id="calculadora">
                 <li class="liLogo">
-                    <img class="logo1" src="./imgs/logo_agrisoft.png" alt="some text">
+                     <span class="fntTitulo">Simulador Financeiro</span>
                 </li>
-                <li class="liLogo">
-                    <span class="fntTitulo">Simulador Financeiro</span>
+                 
+                <li class="liInput">
+                    <span class="fntTexto">Faturamento por hectare:</span>
                 </li>
-            </ul>
--->
-            <!-- Inputs -->
-            <div class="cont">
-                <div class="continput">
-                    <ul>
-                        <li class="liLogo">
-                            <img class="logo1" src="./imgs/logo_agrisoft.png" alt="some text">
-                        </li>
-                        <li class="liLogo">
-                            <span class="fntTitulo">Simulador Financeiro</span>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li class="liInput">
-                            <span class="fntTexto">Faturamento por hectare:</span>
-                        </li>
-                        <li class="liInput">
-                            <input class="input_valores" id="input_faturamento" placeholder="Faturamento">
-                        </li>
-                    </ul>
+                <li class="liInput">
+                    <input class="input_valores" id="input_faturamento" placeholder="Faturamento">
+                </li>
 
-                    <ul>
-                        <li class="liInput">
-                            <span class="fntTexto">Quatidade de hectares:</span>
-                        </li>
-                        <li class="liInput">
-                            <input class="input_valores" id="input_hec" type="number" placeholder="Unidade">
-                        </li>
-                    </ul>
-
-                    <ul>
-                        <li class="liInput">
-                            <span class="fntTexto">Prejuizo por safra:</span>
-                        </li>
-                        <li class="liInput">
-                            <input class="input_valores" id="input_prejuizo" placeholder="Prejuízo"> 
-                        </li>
-                    </ul>
-
-                    <ul>
-                        <button class="botao1" onclick="calcular()">Calcular</button>      
-                    </ul>
-                </div>
+                <li class="liInput">
+                    <span class="fntTexto">Quatidade de hectares:</span>
+                </li>
+                <li class="liInput">
+                    <input class="input_valores" id="input_hec" type="number" placeholder="Unidade">
+                </li>
+            
+                <li class="liInput">
+                    <span class="fntTexto">Prejuizo por safra:</span>
+                </li>
+                <li class="liInput">
+                    <input class="input_valores" id="input_prejuizo" placeholder="Prejuízo"> 
+                </li>
+                
+                <button class="botao1" onclick="calcular()">Calcular</button>         
             </div>
         </div>
     </main>
