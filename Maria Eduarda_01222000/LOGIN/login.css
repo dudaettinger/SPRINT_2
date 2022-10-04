@@ -71,7 +71,7 @@ width: 400px;
 
 }
 
-.button{
+button{
     display: flex;
     justify-content: center;
     color: #fff;
@@ -92,4 +92,27 @@ a{
 text-decoration: none;
 color: #fff;
 }
+
+.texto_redefinir_senha{
+    font-size: 11px;
+    margin-top: 20px;
+    margin-left: 95px;
+    color: black;
+
+}
+
+.link_senha{
+    color: black;
+}
+
+.link_senha:hover{
+color: rgba(28, 60, 89, 1);  ;
+}
+
+.botao_login{
+margin-top: 20px;
+border-radius: 30px;
+}
+
+
 

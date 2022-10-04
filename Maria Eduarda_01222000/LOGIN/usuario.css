@@ -1,28 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-.container {
-    padding: 50vh;
-    background-size: cover;
-    width: 60%;
-    height: 500px;
-    background-color: blue;
-    margin-right: 120px;
-    margin-top: 70px;
-
-    }
-
-    .imagem_perfil{
-        margin-left: 20px;
-        width : 90px;
-        height: 90px;
-        border-radius: 100%;
-    }
-
-    .container2 {
+    .container {
         background-size: cover;
         width: 300px;
         height: 800px;
-        background-color: rgb(0, 0, 0);
+        background-color:rgba(0, 0, 0, 0.8);
         color: rgb(253, 253, 253);
         }
 
