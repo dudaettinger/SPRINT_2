@@ -15,13 +15,16 @@
         calculadora.innerHTML = `
         <center class="centerJS">
         
-        <div style="margin: 40px 0;">Sem SoyTech<br>
+        <div style="margin: 40px 0;">
+        Sem SoyTech<br>
         Seu faturamento: ${receita} por safra<br>
         Sua Perda:${prejuizo} por safra<br>
         Sua Receita final: ${receita_perda}<br>
-        Você perdeu aproximadamente ${porcentagem_perda} %.</div>
+        Você perdeu aproximadamente ${porcentagem_perda} %.
+        </div>
    
-        <div style=" margin-bottom: 10px; "><br>Com SoyTech<br>
+        <div style=" margin-bottom: 10px; "><br>
+        Com SoyTech<br>
         Seu faturamento: ${receita} por safra<br>
         Sua Perda:${prejuizo} por safra<br>
         Sua Receita final: ${receita_perda}<br>
