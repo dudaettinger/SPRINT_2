@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+header {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-decoration: none;
+}
+
+.logo {
+    padding: 0;
+    margin-right: 350px;
+    max-width: 100px;
+}
+
+.menu-navegacao {
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.tracinho {
+    cursor: auto;
+    font-size: large;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.menu-navegacao-item {
+    font-weight: 600;
+    font-size: 15px;
+    color: aliceblue;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: space-around;
+}
+
+.menu-navegacao-item:hover {
+    opacity: 0.50;
+    animation-delay: 5ms;
+    color: yellow;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+/*rodape*/
+.rodape {
+    margin: 20px;
+    display: flex;
+    gap: 30px;
+
+}
+
+.container-rodape {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.rodape-item {
+    color: aliceblue;
+    font-size: 10px;
+}
+
+.asft {
+    color: aliceblue;
+    margin: 20px;
+    font-size: 10px;
+}
+
+/*contato*/
+
+.div-contato {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 90%;
+}
+
+.contato {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.contato-paragrafo {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+
+.contato-logo {
+    max-width: 20px;
+}
+
+.texto {
+    color: aliceblue;
+}
+
+.assistencia {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.assistencia-texto {
+    color: aliceblue;
+}
