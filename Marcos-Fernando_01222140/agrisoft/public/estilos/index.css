@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    display: flex;
+    background-image: url("../imgs/background.jpg");
+    background-size: cover;
+    color: black;
+    font-size: xx-large;
+    font-family: 'Montserrat', sans-serif;
+    height: 70vh;
+    width: 100%;
+    justify-content: center;
+}
+
+.texto-as{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*
+.container p {
+    margin-top: 50px;
+}*/
+
+.aboutus {
+    padding: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.aboutus p {
+    margin: 10px 100px;
+    text-align: justify;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+/* MISSÃO VISÃO E VALORES */
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 150px;
+}
+
+.card {
+
+}
