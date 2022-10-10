@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>CHART JS</title>
+    <link rel="icon" href="chartjs.png">
+</head>
+
+<body style="display: flex;">
+    <div>
+        <canvas id="myChart" style="position: relative; 
+        height:40vh; 
+        width:30vw"></canvas>
+    </div>
+    <div>
+        <canvas id="myChart2"style="position: relative; 
+        height:40vh; 
+        width:30VW"></canvas>
+    </div>
+    <div>
+        <canvas id="myChart3"style="position: relative;
+            height:40vh; 
+            width:30VW"></canvas>
+    </div>
+    <div>
+        <canvas id="myChart4"style="position: relative; height:40vh; width:30VW"></canvas>
+    </div>
+</body>
+
+    <script>
+// GRÁFICO TEMPERATURA
+            const labels = [
+            '12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00',
+            '18:00'
+            ];
+
+            const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Temperatura',
+                backgroundColor: 'chartreuse',
+                borderColor: 'chartreuse',
+                data: [34, 31, 29, 28, 25, 25, 23],
+            },
+            ]
+            };
+
+            const config = {
+            type: 'line',
+            data: data,
+            options: {}
+            };
+    </script>
+    <script>
+            const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+            );
+
+
+//GRÁFICO TEMPERATURA MÉDIA
+        const labels2 = [
+            'Setembro',
+            'Outubro',
+            'Novembro',
+            'Dezembro',
+            'Janeiro',
+            'Fevereiro'
+        ];
+
+
+        const data2 = {
+            labels: labels2,
+            datasets: [{
+            label: 'Temperatura Média',
+            backgroundColor: 'black',
+            borderColor: 'black',
+            data: [23, 24.5, 26, 29, 27, 25],
+            },
+            ]
+        };
+
+        const config2 = {
+            type: 'bar',
+            data: data2,
+            options: {}
+        };
+
+        const myChart2 = new Chart(
+            document.getElementById('myChart2'),
+            config2
+        );
+
+    </script>
+    
+
+<script>
+// GRÁFICO UMIDADE
+        const labels3 = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+        '18:00'
+        ];
+
+        const data3 = {
+        labels: labels3,
+        datasets: [{
+                label: 'Umidade',
+                backgroundColor: 'chartreuse',
+                borderColor: 'chartreuse',
+                data: [65, 70, 72, 73, 80, 83, 83],
+            }
+        ]
+        };
+
+        const config3 = {
+        type: 'line',
+        data: data3,
+        options: {}
+        };
+
+        const myChart3 = new Chart(
+        document.getElementById('myChart3'),
+        config3
+        );
+</script>
+
+<script>
+
+//GRAFICO UMIDADE MÉDIA
+    const labels4 = [
+        'Setembro',
+        'Outubro',
+        'Novembro',
+        'Dezembro',
+        'Janeiro',
+        'Fevereiro'
+    ];
+
+
+    const data4 = {
+        labels: labels4,
+        datasets: [{
+        label: 'Umidade Média',
+        backgroundColor: 'black',
+        borderColor: 'black',
+        data: [60, 62, 70, 65, 71, 83],
+        }]
+    };
+
+    const config4 = {
+        type: 'bar',
+        data: data4,
+        options: {}
+    };
+
+    const myChart4 = new Chart(
+        document.getElementById('myChart4'),
+        config4
+    );
+
+</script>
+</html>
