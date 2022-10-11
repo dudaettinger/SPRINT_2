@@ -20,6 +20,7 @@ header {
     justify-content: space-around;
     text-decoration: none;
     width: 100%;
+    /*position: fixed;*/
 }
 
 .logo {
@@ -52,7 +53,7 @@ header {
 .menu-navegacao-item:hover {
     opacity: 0.50;
     animation-delay: 5ms;
-    color: yellow;
+    color: rgb(124, 255, 124);
     border-radius: 10px;
 }
 

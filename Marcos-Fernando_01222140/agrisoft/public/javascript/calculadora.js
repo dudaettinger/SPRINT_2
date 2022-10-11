@@ -13,29 +13,26 @@
 
 
         calculadora.innerHTML = `
-        <center class="centerJS">
-        
-        <div style="margin: 40px 0;">
-        Sem SoyTech<br>
-        Seu faturamento: ${receita} por safra<br>
-        Sua Perda:${prejuizo} por safra<br>
-        Sua Receita final: ${receita_perda}<br>
-        Você perdeu aproximadamente ${porcentagem_perda} %.
+        <div class="div-calc">
+        <h4>Resultado</h4><br>
+        <u>
+            <li>Seu faturamento: ${receita} por safra</li><br>
+            <li>Sua Perda: ${prejuizo} por safra</li><br>
+            <li>Sua Receita final: ${receita_perda.toFixed(2)}</li><br>
+            <li>Você perdeu aproximadamente ${porcentagem_perda.toFixed(2)} %.</li>
+        </u>
         </div>
-   
-        <div style=" margin-bottom: 10px; "><br>
-        Com SoyTech<br>
-        Seu faturamento: ${receita} por safra<br>
-        Sua Perda:${prejuizo} por safra<br>
-        Sua Receita final: ${receita_perda}<br>
-        Você perdeu aproximadamente ${porcentagem_perda} %.<br>
-        A partir de resultados registrados com a utilização do produto HelpSoy, sua receita com prejuizo reduzido em 30% ficou ${valor_final} <br>
-        
-        <button class = "botao_funcao" onclick="voltar()">
+
+        <div class="div-calc">
+        <u>
+        <h4>Com SoyTech</h4><br>
+            <li>A partir de resultados registrados com a utilização do produto SoyTech, sua receita com prejuizo reduzido em 30% resultou em ${valor_final.toFixed(2)} </li><br>
+        </u>
+        </div>
+
+        <button class="botao-funcao" onclick="voltar()">
         Novo calculo
         </button>
-        </center>
-        </div>`
-
+        `
         calculadora.style.margin = "100px 0"
         }
