@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;400;500;600;700;800;900&family=Roboto:wght@300&display=swap');
+
+.container {
+    background-size: cover;
+    width: 300px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: rgb(253, 253, 253);
+    align-items: center;
+    font-family: 'Barlow', sans-serif;
+    border-color:black;
+    border-width: 2px;
+    border-right-style:groove;
+}
+
+.container2 {
+    width: 100%;
+    height: 600px;
+    flex-direction: column;
+    display: flex;
+   
+ 
+}
+.dash{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.setor1{
+
+width: 50%;
+}
+.setor2{
+  
+    width: 50%;
+    }
+
+
+
+ .hectar_botoes_dash{
+    background-color: rgba(0, 0, 0, 0.8);
+width: 100%;
+height: 20%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+
+
+.botoes_hactare{
+    color: #fff;
+    background-color: #4c7e0b  ;
+    padding: 10px 0px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 120px;
+    height: 30%;
+  
+}
+
+.botoes_hactare:hover{
+    color: rgb(255, 255, 255);
+    opacity: 80%;
+    background-color: #051d03;
+}
+
+
+main {
+    display: flex;
+    justify-content: space-between;
+    background-image: url("https://img2.goodfon.com/wallpaper/nbig/f/aa/soybean-soia-pole-plantatsiia-zelen-derevia-tuman-utro-rassv.jpg");
+    background-size: cover;
+}
+
+.titulo_usuario {
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    margin-bottom: 20%;
+ 
+
+}
+
+.nome_usuario {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    font-size: 20px;
+
+}
+
+
+
+
+/* .div_imagem{
+    background-color: transparent;
+    border-radius: 100%;
+    width: 8vw;
+    height: 15vh;
+    margin-left: 4.9vw;
+    margin-bottom: 3vh;
+    padding: 10px;
+    justify-content: center;
+    display: flex;
+} */
+
+.imagem_usuario{
+    border-radius: 100%;
+    width: 7.5vw;
+    height: 15vh;
+    margin-left: 5.3vw;
+    margin-bottom: 3vh;
+    border-color:rgb(0, 0, 0);
+    border-width: 2px;
+    border-style:groove;
+}
+
+.botoes_principais{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    background-color: #0c3409  ;
+    padding: 10px 0px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 120px;
+    margin: 3vh ;
+    margin-bottom: 1vh;
+}
+.botoes_principais:hover{
+    color: rgb(255, 255, 255);
+    opacity: 80%;
+    background-color: #1b6816;
+}
+.botao_sair:hover{
+    color: rgb(255, 255, 255);
+    opacity: 80%;
+}
+
+.botao_sair{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    background-color: #460404;  ;
+    padding: 10px 0px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 120px;
+    margin: 3vh ;
+    margin-top: 3.5vh;
+}
+
+.div_botoes{
+display: grid;
+text-align: center;
+align-items: center;
+justify-content: center;
+
+
+
+}
