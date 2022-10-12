@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="usuario.css">
     <title>Agrisoft</title>
     <link rel="icon" href="imgs/logo_agrisoft.png">
+    
+
+ 
 </head>
 
 <body>
@@ -30,20 +33,46 @@
         <div class="container">
 
             <h1 class="titulo_usuario">Agrisoft</h1>
-        <div class="div_imagem">
-            <img class="imagem_usuario" src="https://cdn-icons-png.flaticon.com/512/5953/5953611.png" alt="Imagem do usuario">
+            <div class="div_imagem">
+               <img class="imagem_usuario" src="imgs/Imagem_brandao.png" alt="">
+            </div>
+
+            <h2 class="nome_usuario">Olá,  <span id="b_usuario">Fernando Brandão</span>!</h2>
+
+           <div class="div_botoes">
+            <button class="botoes_principais">Minha Safra</button>
+               <button class="botoes_principais">Gráficos</button>
+               <button class="botoes_principais">Feedback</button>
+               <button class="botao_sair">Sair</button>
+
+            </div>
+
         </div>
 
-            <h3 class="nome_usuario">Olá, <span id="b_usuario">usuário</span>!</h3>
-
-
-
-
-        </div>
-
+        
         <div class="container2">
+            
+                
+            <div class="hectar_botoes_dash">
+                <button class="botoes_hactare">Hectare1</button>
+               <button class="botoes_hactare">Hectare2</button>
+               <button class="botoes_hactare">Hectare3</button>
 
-        </div>
+            </div>
+            
+
+             <div  class="dash">
+
+                <div id="resultado_setor1" class="setor1">
+
+                </div>
+                <div id="resultado_setor2" class="setor2">
+
+                </div>
+                
+             </div>
+          </div>
+        
 
 
 
@@ -100,4 +129,90 @@
 
 </body>
 
+<script>
+    const labels = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Temperatura',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [30, 29, 28, 25, 22, 23],
+        },
+        {
+            labels: labels,
+            label: 'Umidade',
+            backgroundColor: 'rgb(0, 0, 255)',
+            borderColor: 'rgb(0, 0, 255)',
+            data: [80, 82, 80, 85, 80, 83],
+        }]
+    };
+
+    const labels2 = [
+        'Janeiro',
+        'Feveiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+    ];
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Temperatura Média',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [22, 24, 27, 25, 23, 20, 18],
+        },
+        {
+            labels: labels2,
+            label: 'Umidade Média',
+            backgroundColor: 'rgb(0, 0, 255)',
+            borderColor: 'rgb(0, 0, 255)',
+            data: [90, 89, 93, 87, 88, 82],
+        }]
+    };
+
+
+
+
+
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+
+
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+</script>
+
+<script>
+    const resultado_setor2 = new Chart(
+        document.getElementById('resultado_setor2'),
+        config
+    );
+
+    const resultado_setor1 = new Chart(
+        document.getElementById('resultado_setor1'),
+        config2
+    );
+</script>
+
+
 </html>
+
