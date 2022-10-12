@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
+
+.banner {
+    background-image: url("../imgs/background.jpg");
+    padding: 65px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caixa-formulario {
+    width: 38%;
+    background-color: rgb(245, 236, 236);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.titulo {
+    margin: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.titulo b {
+    color: darkolivegreen;
+}
+
+.in-campo {
+    all: unset;
+    width: 50%;
+    height: 5vh;
+    border-bottom: 0.4vh solid darkolivegreen;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.texto-input {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px;
+}
+
+.texto-login {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.botao-cadastro {
+    all: unset;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+    background-color: darkolivegreen;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
