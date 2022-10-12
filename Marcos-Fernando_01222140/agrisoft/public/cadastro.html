@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/padraoestilo.css">
     <link rel="stylesheet" href="estilos/cadastro.css">
-    <script src="./javascript/assistencia.js"></script>
+    <script src="./javascript/cadastro.js"></script>
     <link rel="icon" href="./imgs/icon_agrisoft.png">
     <title>Agrisoft - Cadastro</title>
 </head>
@@ -26,30 +26,31 @@
 
     <main>
         <section class="banner">
-            <div class="caixa-formulario">
+            <div id="principal" class="caixa-formulario">
                 <p class="titulo">Bem vindo à <b>Agrisoft</b>!</p>  
                 <div class="campo">
                     <label class="texto-input" for="nome">Nome:</label>
-                    <input class="in-campo" type="text" id="nome" placeholder="Seu nome">
+                    <input class="in-campo" type="text" id="in_nome" placeholder="Seu nome">
                 </div>
                 <div class="campo">
                     <label class="texto-input" for="email">E-mail:</label>
-                    <input class="in-campo" type="email" id="email" placeholder="email@email.com">
+                    <input class="in-campo" type="email" id="in_email" placeholder="email@email.com">
                 </div>
                 <div class="campo">
                     <label class="texto-input" for="senha">Senha:</label>
-                    <input class="in-campo" type="password" id="senha" placeholder="*********">
+                    <input class="in-campo" type="password" id="in_senha" placeholder="*********">
                 </div>
                 <div class="campo">
                     <label class="texto-input" for="confirmacao_senha">Confirmação de Senha:</label>
-                    <input class="in-campo" type="password" id="confirmacao_senha" placeholder="*********">
+                    <input class="in-campo" type="password" id="in_confirmacao_senha" placeholder="*********" onkeyup="verificacao_senha()">
                 </div>
                 <div class="campo">
-                    <label class="texto-input" for="credencial">CNPJ Fazenda:</label>
-                    <input class="in-campo" id="credencial" placeholder="XX.XXX.XXX/0001-XX">
+                    <label class="texto-input" for="cnpj">CNPJ Fazenda:</label>
+                    <input class="in-campo" id="in_cnpj" placeholder="XX.XXX.XXX/0001-XX">
                 </div><br>
+                <div id="alerta"></div><br>
                 <p class="texto-login">Já tem login? <a href="./login.html">Login</a></p><br>
-                <button class="botao-cadastro" >Cadastrar</button><br>
+                <button class="botao-cadastro" onclick="cadastrar()">Cadastrar</button><br>
             </div>
         </section>
     </main>

@@ -10,7 +10,7 @@
 }
 
 .caixa-formulario {
-    width: 38%;
+    width: 45%;
     background-color: rgb(245, 236, 236);
     padding: 30px;
     display: flex;
@@ -22,15 +22,15 @@
 .campo {
     display: flex;
     flex-direction: row;
-    padding: 5px;
-    margin: 10px;
+    padding: 0;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
+    margin: 5px;
 }
 
 .titulo {
-    margin: 10px;
+    margin: 25px;
     font-size: 25px;
     font-weight: 600;
     color: rgb(0, 0, 0);
@@ -49,18 +49,18 @@
     font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
 }
 
 .texto-input {
+    width: 50%;
     font-size: 18px;
     font-weight: 600;
     color: rgb(0, 0, 0);
-    height: 7vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     font-family: 'Montserrat', sans-serif;
-    margin: 10px;
+    margin: 5px;
 }
 
 .texto-login {
@@ -77,5 +77,22 @@
     height: 40px;
     background-color: darkolivegreen;
     border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.alert {
+    display: flex;
+    flex-direction: column;
+}
+
+#alerta {
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#cadastrado {
+    text-align: center;
+    font-size: 15px;
     font-family: 'Montserrat', sans-serif;
 }
