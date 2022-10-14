@@ -84,9 +84,6 @@ function cadastrar() {
         `
 
     } else {
-
         senhaValida()
-    
     }
-
 }
