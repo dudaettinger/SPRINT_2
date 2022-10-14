@@ -18,17 +18,16 @@ function senhaValida() {
     var frase_alerta = "Não foi possível realizar o cadastro!<br> A senha deve ter 8 digitos!"
         
     if (senha.length == 8) {
-        var letraMaiuscula = senha.match(/A-Z/g);
-        var letraMinuscula = senha.match(/a-z/g);
-        var numeros = senha.match(/0-9/g);
+        var letraMaiuscula = senha.match(/[A-Z]/);
+        var letraMinuscula = senha.match(/[a-z]/);
+        var numeros = senha.match(/[0-9]/);
 
-        if (letraMaiuscula.length() > 0 && 
-            letraMinuscula.length() > 0 &&
-            numeros.length() > 0 ) {
-
-                alerta.innerHTML = `
-                    Cadastro realizado com sucesso!
-                `
+        if (letraMaiuscula.length() > 0 && letraMinuscula.length() > 0 && numeros.length() > 0) {
+            
+            alerta.innerHTML = `
+                Cadastro realizado com sucesso!
+            `
+        
         } else {
 
             alerta.innerHTML = `
@@ -38,22 +37,6 @@ function senhaValida() {
                 </p>
                 `
         }
-
-      /*if (senha.indexOf("!") > -1 || senha.indexOf("@") > -1 || senha.indexOf("#") > -1 || 
-            senha.indexOf("$") > -1 || senha.indexOf("%") > -1 || senha.indexOf("&") > -1 || 
-            senha.indexOf("*") > -1 ) {
-            
-                alerta.innerHTML = `
-                    Cadastro realizado com sucesso!
-                `
-            } else {
-                alerta.innerHTML = `
-                <p style="color: red;">
-                    A senha deve ter no mínimo um caractere especial<br> 
-                    ex: !, @, #, $, %, &, *
-                </p>
-                `
-            }*/
 
     } else {
         alerta.innerHTML = `
