@@ -1,0 +1,109 @@
+function verificacao_senha() {
+    var senha = in_senha.value;
+    var conf_senha = in_confirmacao_senha.value;
+    
+    if (conf_senha != senha) {
+        alerta.innerHTML = `
+            <p style="color: red;">
+            As senhas devem ser iguais!
+            </p> 
+        `
+    } else {
+        alerta.innerHTML = ``
+    }
+}
+
+function senhaValida() {
+    var senha = in_senha.value;
+    var frase_alerta = "Não foi possível realizar o cadastro!<br> A senha deve ter 8 digitos!"
+        
+    if (senha.length == 8) {
+        var letraMaiuscula = senha.match(/A-Z/g);
+        var letraMinuscula = senha.match(/a-z/g);
+        var numeros = senha.match(/0-9/g);
+
+        if (letraMaiuscula.length() > 0 && 
+            letraMinuscula.length() > 0 &&
+            numeros.length() > 0 ) {
+
+                alerta.innerHTML = `
+                    Cadastro realizado com sucesso!
+                `
+        } else {
+
+            alerta.innerHTML = `
+                <p style="color: red;">
+                    A senha deve conter letra minúscula,
+                    letra maiuscula e um numero.
+                </p>
+                `
+        }
+
+      /*if (senha.indexOf("!") > -1 || senha.indexOf("@") > -1 || senha.indexOf("#") > -1 || 
+            senha.indexOf("$") > -1 || senha.indexOf("%") > -1 || senha.indexOf("&") > -1 || 
+            senha.indexOf("*") > -1 ) {
+            
+                alerta.innerHTML = `
+                    Cadastro realizado com sucesso!
+                `
+            } else {
+                alerta.innerHTML = `
+                <p style="color: red;">
+                    A senha deve ter no mínimo um caractere especial<br> 
+                    ex: !, @, #, $, %, &, *
+                </p>
+                `
+            }*/
+
+    } else {
+        alerta.innerHTML = `
+            <p style="color: red;">
+            ${frase_alerta}
+            </p>
+        `
+    }
+}
+
+function cadastrar() {
+    var nome = in_nome.value;
+    var email = in_email.value;
+    var senha = in_senha.value;
+    var conf_senha = in_confirmacao_senha.value;
+    var cnpj = in_cnpj.value;
+    var frase_alerta = "Não foi possível realizar o cadastro!<br> Verifique se os campos foram preenchidos corretamente."
+
+
+    if (nome == '' || 
+        email == '' || 
+        senha == '' || 
+        conf_senha != senha || 
+        cnpj == '') {
+
+        alerta.innerHTML = `
+            <p style="color: red;">
+            ${frase_alerta}
+            </p>
+        `
+    
+    } else if (email.endsWith("@gmail.com") == false) {
+        alerta.innerHTML = `
+            <p style="color: red;">
+            ${frase_alerta} <br>
+            O e-mail inserido é inválido.
+            </p>
+        `
+
+    } else if (cnpj.length != 14) {
+        alerta.innerHTML = `
+            <p style="color: red;">
+            ${frase_alerta}
+            </p>
+        `
+
+    } else {
+
+        senhaValida()
+    
+    }
+
+}

@@ -1,4 +1,6 @@
-{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -76,106 +78,86 @@ header {
 
 /* cadastro do site */
 
-.empresa{
-
- background-color: red;
-}
-
-
-
-
-
-
 .banner {
-
     background-image: url("./assets/img/bg-jelly-fish-para_outras_pags.png");
     padding: 100px 0;
     background-size: cover;
     height: 95vh;
-
 }
 
 .banner .container {
     justify-content: center;
     align-items: center;
-    height: 50%;
+    height: 20%;
 }
 
 .caixa-formulario {
     background-color: rgb(245, 236, 236);
-    border-radius: 10px;
+    border-radius: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: -215px;
-    height: 75vh;
-
+    margin: -215px; 
+    width: 500px;
+    height: 500;
+    margin-top: -195px;
+   
+    
+    
 }
 
 .caixa-formulario span {
     color: rgba(28, 60, 89, 1);
     margin-bottom: 35px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
+    align-items: none;
+    margin: 30px;
+
 }
 
-.campo_cadastro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-fieldset {
-    border: 1px solid #32b9cd;
-    padding: 30px;
-    margin-left: 20px;
-    margin-right: 20px;
-    border-radius: 15px;
-    margin-bottom: 15px;
-}
-legend {
-    color: black;
-}
 
 .caixa-formulario .campo {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: row;
     justify-content: flex-start;
     width: 30vw;
+   
 }
 
 .caixa-formulario .campo label {
     color: rgba(28, 60, 89, 1);
-    font-size: 20px;
-    padding: 10px 0;
+    font-size: 15px;
+    padding: 12px 0;
+    margin-left: 15px;
+  margin-top: 16px;
+    margin-bottom: -20px;
 }
 
 .caixa-formulario .campo input {
-    padding: 10px;
+    padding: 15px;
     border: none;
     background-color: rgba(255, 255, 255, 0);
     border-bottom: 2px solid #32b9cd;
-    width: 100%;
+    width: 90%;
     outline: none;
     transition: 0.8s ease-in-out;
-
+    margin-left: 15px;
+    
 }
 
 .caixa-formulario .campo input:hover {
     border: none;
     border-bottom: 2px solid green;
-    -webkit-transform: scale(1.06);
-    -ms-transform: scale(1.06);
-    transform: scale(1.06);
+    -webkit-transform: scale(1.08);
+    -ms-transform: scale(1.08);
+    transform: scale(1.08);
 }
 
 
 .caixa-formulario button {
-    margin-top: 10px;
+    margin: 20px 0;
     width: 30%;
     color: #fff;
     background-color: rgba(28, 60, 89, 1);
@@ -196,6 +178,17 @@ legend {
     -ms-transform: scale(1.05);
     transform: scale(1.05);
 }
+
+.botao_cadastro{
+margin-top: 20px;
+}
+
+ .caixa-formulario .texto_login{
+margin-top:  -5px;
+margin-bottom: 20px;
+
+}
+
 
 .logo_site {
 
@@ -286,17 +279,4 @@ footer {
 
 .assistencia-texto {
     color: aliceblue;
-}
-
-.box-great {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row;
-}
-
-.box-small {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 80%;
 }

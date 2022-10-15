@@ -1,59 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="padraoestilo.css">
-    <link rel="stylesheet" href="index.css">
-    <script src="./javascript/assistencia.js"></script>
-    <title>Agrisoft</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="padrao.calculadora.css">
+    <link rel="stylesheet" href="calculadora_site.css">
+    <link rel="icon" href="./imgs/icon_agrisoft.png">
+    <script src="./javascript/calculadora.js"></script>
 </head>
 <body>
-
     <header>
         <img class="logo" src="do_Site_logo_agrisoft.png" alt="logo">
         <nav class="menu-navegacao">
             <a class="menu-navegacao-item" href="index.html">Página Inicial</a>
-            <a class="menu-navegacao-item" href="#sobre_nos">Sobre nós</a>
+            <a class="menu-navegacao-item" href="index.html">Sobre nós</a>
             <a class="menu-navegacao-item" href="calculadora.html">Simulador Financeiro</a>
             <p class="tracinho">|</p>
-            <a class="menu-navegacao-item" href="cadastro.html">Cadastro</a>
-            <a class="menu-navegacao-item" href="login.html">Login</a>
+            <a class="menu-navegacao-item" href="cadastro.html">Contrate-nos</a>
+            <a class="menu-navegacao-item" href="cliente.html">Já sou cliente</a>
         </nav>
     </header>
 
     <main>
-        <section class="inicio_site">
-            <div class="container">
-                <p>
-                    Você <b>planta</b>, a gente <b>cuida</b>
-                </p>
-            </div>
-        </section>
+        <div class="container">
+            <div id="calculadora">
+                <li class="liLogo">
+                     <span class="fntTitulo">Simulador Financeiro</span>
+                </li>
+                 
+                <li class="liInput">
+                    <span class="fntTexto">Faturamento por hectare:</span>
+                </li>
+                <li class="liInput">
+                    <input class="input_valores" id="input_faturamento" placeholder="Faturamento">
+                </li>
 
-        <section class="sobre_nos">
-            <div class="aboutus" id="sobre_nos">
+                <li class="liInput">
+                    <span class="fntTexto">Quatidade de hectares:</span>
+                </li>
+                <li class="liInput">
+                    <input class="input_valores" id="input_hec" type="number" placeholder="Unidade">
+                </li>
+            
+                <li class="liInput">
+                    <span class="fntTexto">Prejuizo por safra:</span>
+                </li>
+                <li class="liInput">
+                    <input class="input_valores" id="input_prejuizo" placeholder="Prejuízo"> 
+                </li>
                 
-                <h1 class="titulo">QUEM SOMOS?</h1>
-                
-                <p>
-                    Nós da AgriSoft nos importamos com o futuro dos agricultores e consumidores. Acreditamos fortemente que uma abordagem mais balanceada para a agricultura é necessária para um futuro mais sustentável e rentável. <br>
-                    <br>
-                    Buscamos fazer a diferença através de uma forma inovadora no plantio de soja, de expertise tecnologica diferenciada, forte conhecimento da dinâmica no campo e proximidade com agricultores e pesquisadores.
-                </p>
-                
-                <h1 class="titulo">NOSSA TECNOLOGIA</h1>
-                
-                <p>
-                    Nosso projeto vai mapear as estufas a partir da informação de hectares, instalar sensores e identificar quando temperatura e umidade ultrapassarem a condição ideal. As safras são previamente vendidas, além de esperarem certezas, os clientes prezam pela boa qualidade para que mantenha a credibilidade do produtor. <br>
-                    <br>
-                    Assim, é evitada a perda de sementes e o aproveitamento da safra deve aumentar em até 30%, reduzindo os custos de perda e aumentando o lucro sobre o faturamento da empresa.
-                </p>
+                <button class="botao1" onclick="calcular()">Calcular</button>         
             </div>
-        </section>
+        </div>
     </main>
-    
+
     <footer>
         <!--CONTATOS E ICONES RODAPE SUPERIOR-->
         <div class="div-contato">
@@ -96,6 +98,5 @@
             <a class="asft" href="#">&copy;2022, AGRISOFT</a>
         </div>
     </footer>
-
 </body>
 </html>
