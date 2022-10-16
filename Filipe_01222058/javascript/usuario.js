@@ -1,80 +1,103 @@
-const labels = [
-    '12:00',
-    '13:00',
-    '14:00',
-    '15:00',
-    '16:00',
-    '17:00',
-];
 
-const data = {
-    labels: labels,
-    datasets: [{
-        label: 'Temperatura',
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: [30, 29, 28, 25, 22, 23],
-    },
-    {
-        labels: labels,
-        label: 'Umidade',
-        backgroundColor: 'rgb(0, 0, 255)',
-        borderColor: 'rgb(0, 0, 255)',
-        data: [80, 82, 80, 85, 80, 83],
-    }]
-};
+function Hectare2_temp_um(){
+    id_hectare_atual.innerHTML = "H2 Setores"
 
-const labels2 = [
-    'Janeiro',
-    'Feveiro',
-    'Março',
-    'Abril',
-    'Maio',
-    'Junho',
-];
-
-const data2 = {
-    labels: labels2,
-    datasets: [{
-        label: 'Temperatura Média',
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: [22, 24, 27, 25, 23, 20, 18],
-    },
-    {
-        labels: labels2,
-        label: 'Umidade Média',
-        backgroundColor: 'rgb(0, 0, 255)',
-        borderColor: 'rgb(0, 0, 255)',
-        data: [90, 89, 93, 87, 88, 82],
-    }]
-};
+    resultado_setor1.innerHTML = `
+    <h3> 1</h3>
+                    <div class="text_setor1_temp">Temperatura
+                        <span class="number_temp1">300°C</span>
+                    </div> 
+                    <div class="text_setor1_umid">Umidade
+                        <span class="number_umid1">230°C</span>
+                    </div>
+                </div> `
+                resultado_setor2.innerHTML= 
+                `   
+                    <h3> 2</h3>
+                    <div class="text_setor2_temp">Temperatura
+                        <span class="number_temp2">320°C</span>
+                    </div>
+                    <div class="text_setor2_umid">Umidade
+                        <span class="number_umid2">200°C</span>
+                    </div>
+                </div>`
 
 
 
+}
+
+function Hectare6_temp_um(){
+    id_hectare_atual.innerHTML = "H6 Setores"
+resultado_setor1.innerHTML = `
+<h3>1</h3>
+                <div class="text_setor1_temp">Temperatura
+                    <span class="number_temp1">28°C</span>
+                </div> 
+                <div class="text_setor1_umid">Umidade
+                    <span class="number_umid1">23°C</span>
+                </div>
+            </div> `
+            resultado_setor2.innerHTML= 
+            `   
+                <h3> 2</h3>
+                <div class="text_setor2_temp">Temperatura
+                    <span class="number_temp2">32°C</span>
+                </div>
+                <div class="text_setor2_umid">Umidade
+                    <span class="number_umid2">20°C</span>
+                </div>
+            </div>`
 
 
 
-const config = {
-    type: 'line',
-    data: data,
-    options: {}
-};
+}
+function Hectare10_temp_um(){
+    id_hectare_atual.innerHTML = "H10 Setores"
+resultado_setor1.innerHTML = `
+<h3>1</h3>
+                <div class="text_setor1_temp">Temperatura
+                    <span class="number_temp1">300°C</span>
+                </div> 
+                <div class="text_setor1_umid">Umidade
+                    <span class="number_umid1">230°C</span>
+                </div>
+            </div> `
+            resultado_setor2.innerHTML= 
+            `   
+                <h3> 2</h3>
+                <div class="text_setor2_temp">Temperatura
+                    <span class="number_temp2">320°C</span>
+                </div>
+                <div class="text_setor2_umid">Umidade
+                    <span class="number_umid2">200°C</span>
+                </div>
+            </div>`
 
 
-const config2 = {
-    type: 'bar',
-    data: data2,
-    options: {}
-};
+
+}
+function Hectare17_temp_um(){
+    id_hectare_atual.innerHTML = "H17 Setores"
+resultado_setor1.innerHTML = `
+<h3> 1</h3>
+                <div class="text_setor1_temp">Temperatura
+                    <span class="number_temp1">300°C</span>
+                </div> 
+                <div class="text_setor1_umid">Umidade
+                    <span class="number_umid1">230°C</span>
+                </div>
+            </div> `
+            resultado_setor2.innerHTML= 
+            `   
+                <h3> 2</h3>
+                <div class="text_setor2_temp">Temperatura
+                    <span class="number_temp2">320°C</span>
+                </div>
+                <div class="text_setor2_umid">Umidade
+                    <span class="number_umid2">200°C</span>
+                </div>
+            </div>`
 
 
-const resultado_setor1 = new Chart(
-    document.getElementById('resultado_setor1'),
-    config
-);
 
-const resultado_setor2 = new Chart(
-    document.getElementById('resultado_setor2'),
-    config2
-);
+}
