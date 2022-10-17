@@ -1,0 +1,17 @@
+    /*aqui o ID é priorizado*/
+    
+    #case {
+        color: blue;
+    }
+
+    h2 {
+        color: black;
+    }
+
+    .texto-roxo {
+        color: purple;
+        background-color: rgb(253, 253, 253);
+    }
+
+    /*no HTML ele é executado primeiro, no CSS usa a linha de cascata*/
+    
