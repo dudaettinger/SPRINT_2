@@ -5,11 +5,11 @@
     width: 250px;
     height: 100%;
     margin-right: 20vw;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: rgb(253, 253, 253);
+    background-color: #dbd4b5;
+    color: black;
     align-items: center;
     font-family: 'Barlow', sans-serif;
-    border-color: black;
+    border-color: #DBE4A9;
     border-width: 2px;
     border-right-style: groove;
 
@@ -20,8 +20,9 @@
 
 .container3 {
 
-    color: rgb(253, 253, 253);
-    width: 50%;
+    color: #c3d48b;
+    background-color:#c3d48b ;
+    width: 100%;
     height: 100vh;
     text-align: center;
     align-items: center;
@@ -36,7 +37,7 @@
     height: 91vh;
     justify-content: space-around;
     display: flex;
-    background-color: #ffffff;
+    background-color: #c3d48b ;
     flex-direction: row;
     text-align: center;
     align-items: center;
@@ -49,7 +50,7 @@
     height: 50%;
     display: flex;
     justify-content: space-evenly;
-    background-color: rgba(163, 163, 150, 0.9);
+    background-color: rgba(0, 0, 0, 0.7);
 
     
 
@@ -92,7 +93,7 @@
 
 /* LEGENDA */
 .legenda {
-    background-color: #ffffff;
+    background-color:  #c3d48b;
     width: 90%;
     height: 90%;
     flex-direction: column;
@@ -214,7 +215,7 @@
     flex-direction: column;
     border-radius: 5%;
     margin-left: 3vw;
-    background-color: rgba(163, 163, 150, 0.9);
+    background-color: rgba(0, 0, 0, 0.7);
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 40;
 
@@ -378,8 +379,8 @@ main {
 .botoes_principais {
     display: flex;
     justify-content: center;
-    color: #fff;
-    background-color: darkolivegreen;
+    color: white;
+    background-color: #99a356;
     padding: 10px 0px;
     font-weight: bold;
     border: none;
@@ -405,7 +406,7 @@ main {
     display: flex;
     justify-content: center;
     color: #fff;
-    background-color: #460404;
+    background-color: darkolivegreen;
     ;
     padding: 10px 0px;
     font-weight: bold;
