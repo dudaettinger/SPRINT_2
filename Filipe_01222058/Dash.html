@@ -42,7 +42,7 @@
             <h4 class="nome_usuario">Olá, Fernando Brandão !</h4>
 
             <div class="div_botoes">
-               <a href="usuario.html"> <button class="botoes_principais">Minha Safra</button></a>
+                <a href="usuario.html"> <button class="botoes_principais">Minha Safra</button></a>
                 <button class="botoes_principais">Gráficos</button>
                 <button class="botoes_principais">Feedback</button>
                 <button class="botao_sair">Sair</button>
@@ -55,40 +55,55 @@
         <div class="container2">
 
 
-            <div class="hectar_botoes_dash">
-                <button onclick="Hectare2()" class="botoes_hactare">Hectare 2</button>
-                <button onclick="Hectare6()" class="botoes_hactare">Hectare 6</button>
-                <button onclick="Hectare10()" class="botoes_hactare">Hectare 10</button>
-                <button onclick="Hectare17()" class="botoes_hactare">Hectare 17</button>
+            <div id="id_hectare_atual" class="legenda">
+                hectare_atual
 
             </div>
 
 
             <div class="dash">
-               
-                <div id="id_hectare_atual" class="hectare_atual"> H2 Setores</div>
-                
-                <div class="setores_gerais">
-                 <div class="setor1">
-                    <canvas id="grafico" class="grafico_dash"></canvas> 
-            
+
+                <div class="Cixa_Botoes_hectares">
+
+                    <button onclick="Hectare2()" class="botoes_hactare">Hectare 2</button>
+                    <button onclick="Hectare6()" class="botoes_hactare">Hectare 6</button>
+                    <button onclick="Hectare10()" class="botoes_hactare">Hectare 10</button>
+                    <button onclick="Hectare17()" class="botoes_hactare">Hectare 17</button>
                 </div>
-            
 
-        
-                <div class="setor2">
-                    <canvas id="grafico2" class="grafico_dash2"></canvas>
-                </div> 
+                <div class="setores_gerais1">
+                    <div class="setor1">
+                        <canvas id="grafico" class="grafico_dash"></canvas>
 
-                
+                    </div>
+
+
+
+                    <div class="setor2">
+                        <canvas id="grafico2" class="grafico_dash2"></canvas>
+                    </div>
+
+
+
+                </div>
+
+                <div class="setores_gerais2">
+
+                <div class="setor3">
+                    <canvas id="grafico3" class="grafico_dash2"></canvas>
+                </div>
+
+
+
+                <div class="setor4">
+                    <canvas id="grafico4" class="grafico_dash"></canvas>
+                </div>
 
             </div>
-            
-            <div class="legenda">LEGENDA</div>
 
             </div>
         </div>
-        
+
 
 
 
@@ -198,6 +213,59 @@
         }]
     };
 
+    const labels3 = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+    ];
+
+    const data3 = {
+        labels: labels3,
+        datasets: [{
+            label: 'Temperatura Setor 1',
+            backgroundColor: 'Red',
+            borderColor: 'Red',
+            data: [30, 29, 28, 25, 22, 23],
+        },
+        {
+            labels: labels3,
+            label: 'Temperatura Setor 2',
+            backgroundColor: ' brown;',
+            borderColor: 'brown',
+            data: [80, 82, 80, 85, 80, 83],
+        }]
+    };
+
+
+    const labels4 = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+    ];
+
+    const data4 = {
+        labels: labels4,
+        datasets: [{
+            label: 'Temperatura Setor 1',
+            backgroundColor: 'Red',
+            borderColor: 'Red',
+            data: [30, 29, 28, 25, 22, 23],
+        },
+        {
+            labels: labels4,
+            label: 'Temperatura Setor 2',
+            backgroundColor: ' brown;',
+            borderColor: 'brown',
+            data: [80, 82, 80, 85, 80, 83],
+        }]
+    };
+
 
 
 
@@ -217,370 +285,395 @@
     };
 
 
+    const config3 = {
+        type: 'bar',
+        data: data3,
+        options: {}
+    };
+
+
+    const config4 = {
+        type: 'bar',
+        data: data4,
+        options: {}
+    };
 
 
 
-    const resultado_setor2 = new Chart(
+
+
+
+
+    const resultado_setor1 = new Chart(
         document.getElementById('grafico'),
         config
     );
 
-    const resultado_setor1 = new Chart(
+    const resultado_setor2 = new Chart(
         document.getElementById('grafico2'),
         config2
     );
-    function Hectare2(){
+    const resultado_setor3 = new Chart(
+        document.getElementById('grafico3'),
+        config
+    );
+
+    const resultado_setor4 = new Chart(
+        document.getElementById('grafico4'),
+        config2
+    );
+    function Hectare2() {
 
         id_hectare_atual.innerHTML = 'H2 Setores'
-    const labels = [
-        '12:00',
-        '13:00',
-        '14:00',
-        '15:00',
-        '16:00',
-        '17:00',
-    ];
+        const labels = [
+            '12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00',
+        ];
 
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'Temperatura',
-            backgroundColor: 'white',
-            borderColor: 'white',
-            data: [30, 29, 28, 25, 22, 23],
-        },
-        {
+        const data = {
             labels: labels,
-            label: 'Umidade',
-            backgroundColor: 'pink',
-            borderColor: 'rgb(0, 0, 255)',
-            data: [80, 82, 80, 85, 80, 83],
-        }]
-    };
+            datasets: [{
+                label: 'Temperatura',
+                backgroundColor: 'white',
+                borderColor: 'white',
+                data: [30, 29, 28, 25, 22, 23],
+            },
+            {
+                labels: labels,
+                label: 'Umidade',
+                backgroundColor: 'pink',
+                borderColor: 'rgb(0, 0, 255)',
+                data: [80, 82, 80, 85, 80, 83],
+            }]
+        };
 
-    const labels2 = [
-        'Janeiro',
-        'Feveiro',
-        'Março',
-        'Abril',
-        'Maio',
-        'Junho',
-    ];
+        const labels2 = [
+            'Janeiro',
+            'Feveiro',
+            'Março',
+            'Abril',
+            'Maio',
+            'Junho',
+        ];
 
-    const data2 = {
-        labels: labels2,
-        datasets: [{
-            label: 'Temperatura Média',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [22, 24, 27, 25, 23, 20, 18],
-        },
-        {
+        const data2 = {
             labels: labels2,
-            label: 'Umidade Média',
-            backgroundColor: 'rgb(0, 0, 255)',
-            borderColor: 'rgb(0, 0, 255)',
-            data: [90, 89, 93, 87, 88, 82],
-        }]
-    };
+            datasets: [{
+                label: 'Temperatura Média',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [22, 24, 27, 25, 23, 20, 18],
+            },
+            {
+                labels: labels2,
+                label: 'Umidade Média',
+                backgroundColor: 'rgb(0, 0, 255)',
+                borderColor: 'rgb(0, 0, 255)',
+                data: [90, 89, 93, 87, 88, 82],
+            }]
+        };
 
 
 
 
 
 
-    const config = {
-        type: 'line',
-        data: data,
-        options: {}
-    };
+        const config = {
+            type: 'line',
+            data: data,
+            options: {}
+        };
 
 
-    const config2 = {
-        type: 'bar',
-        data: data2,
-        options: {}
-    };
+        const config2 = {
+            type: 'bar',
+            data: data2,
+            options: {}
+        };
 
 
 
 
 
-    const resultado_setor2 = new Chart(
-        document.getElementById('grafico'),
-        config
-    );
+        const resultado_setor2 = new Chart(
+            document.getElementById('grafico'),
+            config
+        );
 
-    const resultado_setor1 = new Chart(
-        document.getElementById('grafico2'),
-        config2
-    );
+        const resultado_setor1 = new Chart(
+            document.getElementById('grafico2'),
+            config2
+        );
 
-}
+    }
 
-function Hectare6(){
-    id_hectare_atual.innerHTML = 'H6 Setores'
-    const labels = [
-        '12:00',
-        '13:00',
-        '14:00',
-        '15:00',
-        '16:00',
-        '17:00',
-    ];
+    function Hectare6() {
+        id_hectare_atual.innerHTML = 'H6 Setores'
+        const labels = [
+            '12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00',
+        ];
 
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'Temperatura',
-            backgroundColor: 'white',
-            borderColor: 'white',
-            data: [30, 29, 28, 25, 22, 23],
-        },
-        {
+        const data = {
             labels: labels,
-            label: 'Umidade',
-            backgroundColor: 'pink',
-            borderColor: 'rgb(0, 0, 255)',
-            data: [80, 82, 80, 85, 80, 83],
-        }]
-    };
+            datasets: [{
+                label: 'Temperatura',
+                backgroundColor: 'white',
+                borderColor: 'white',
+                data: [30, 29, 28, 25, 22, 23],
+            },
+            {
+                labels: labels,
+                label: 'Umidade',
+                backgroundColor: 'pink',
+                borderColor: 'rgb(0, 0, 255)',
+                data: [80, 82, 80, 85, 80, 83],
+            }]
+        };
 
-    const labels2 = [
-        'Janeiro',
-        'Feveiro',
-        'Março',
-        'Abril',
-        'Maio',
-        'Junho',
-    ];
+        const labels2 = [
+            'Janeiro',
+            'Feveiro',
+            'Março',
+            'Abril',
+            'Maio',
+            'Junho',
+        ];
 
-    const data2 = {
-        labels: labels2,
-        datasets: [{
-            label: 'Temperatura Média',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [22, 24, 27, 25, 23, 20, 18],
-        },
-        {
+        const data2 = {
             labels: labels2,
-            label: 'Umidade Média',
-            backgroundColor: 'rgb(0, 0, 255)',
-            borderColor: 'rgb(0, 0, 255)',
-            data: [90, 89, 93, 87, 88, 82],
-        }]
-    };
+            datasets: [{
+                label: 'Temperatura Média',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [22, 24, 27, 25, 23, 20, 18],
+            },
+            {
+                labels: labels2,
+                label: 'Umidade Média',
+                backgroundColor: 'rgb(0, 0, 255)',
+                borderColor: 'rgb(0, 0, 255)',
+                data: [90, 89, 93, 87, 88, 82],
+            }]
+        };
 
 
 
 
 
 
-    const config = {
-        type: 'line',
-        data: data,
-        options: {}
-    };
+        const config = {
+            type: 'line',
+            data: data,
+            options: {}
+        };
 
 
-    const config2 = {
-        type: 'bar',
-        data: data2,
-        options: {}
-    };
+        const config2 = {
+            type: 'bar',
+            data: data2,
+            options: {}
+        };
 
 
 
 
 
-    const resultado_setor2 = new Chart(
-        document.getElementById('grafico'),
-        config
-    );
+        const resultado_setor2 = new Chart(
+            document.getElementById('grafico'),
+            config
+        );
 
-    const resultado_setor1 = new Chart(
-        document.getElementById('grafico2'),
-        config2
-    );
+        const resultado_setor1 = new Chart(
+            document.getElementById('grafico2'),
+            config2
+        );
 
-}
+    }
 
-function Hectare10(){
-    id_hectare_atual.innerHTML = 'H10 Setores'
-    const labels = [
-        '12:00',
-        '13:00',
-        '14:00',
-        '15:00',
-        '16:00',
-        '17:00',
-    ];
+    function Hectare10() {
+        id_hectare_atual.innerHTML = 'H10 Setores'
+        const labels = [
+            '12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00',
+        ];
 
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'Temperatura',
-            backgroundColor: 'white',
-            borderColor: 'white',
-            data: [30, 29, 28, 25, 22, 23],
-        },
-        {
+        const data = {
             labels: labels,
-            label: 'Umidade',
-            backgroundColor: 'pink',
-            borderColor: 'rgb(0, 0, 255)',
-            data: [80, 82, 80, 85, 80, 83],
-        }]
-    };
+            datasets: [{
+                label: 'Temperatura',
+                backgroundColor: 'white',
+                borderColor: 'white',
+                data: [30, 29, 28, 25, 22, 23],
+            },
+            {
+                labels: labels,
+                label: 'Umidade',
+                backgroundColor: 'pink',
+                borderColor: 'rgb(0, 0, 255)',
+                data: [80, 82, 80, 85, 80, 83],
+            }]
+        };
 
-    const labels2 = [
-        'Janeiro',
-        'Feveiro',
-        'Março',
-        'Abril',
-        'Maio',
-        'Junho',
-    ];
+        const labels2 = [
+            'Janeiro',
+            'Feveiro',
+            'Março',
+            'Abril',
+            'Maio',
+            'Junho',
+        ];
 
-    const data2 = {
-        labels: labels2,
-        datasets: [{
-            label: 'Temperatura Média',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [22, 24, 27, 25, 23, 20, 18],
-        },
-        {
+        const data2 = {
             labels: labels2,
-            label: 'Umidade Média',
-            backgroundColor: 'rgb(0, 0, 255)',
-            borderColor: 'rgb(0, 0, 255)',
-            data: [90, 89, 93, 87, 88, 82],
-        }]
-    };
+            datasets: [{
+                label: 'Temperatura Média',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [22, 24, 27, 25, 23, 20, 18],
+            },
+            {
+                labels: labels2,
+                label: 'Umidade Média',
+                backgroundColor: 'rgb(0, 0, 255)',
+                borderColor: 'rgb(0, 0, 255)',
+                data: [90, 89, 93, 87, 88, 82],
+            }]
+        };
 
 
 
 
 
 
-    const config = {
-        type: 'line',
-        data: data,
-        options: {}
-    };
+        const config = {
+            type: 'line',
+            data: data,
+            options: {}
+        };
 
 
-    const config2 = {
-        type: 'bar',
-        data: data2,
-        options: {}
-    };
+        const config2 = {
+            type: 'bar',
+            data: data2,
+            options: {}
+        };
 
 
 
 
 
-    const resultado_setor2 = new Chart(
-        document.getElementById('grafico'),
-        config
-    );
+        const resultado_setor2 = new Chart(
+            document.getElementById('grafico'),
+            config
+        );
 
-    const resultado_setor1 = new Chart(
-        document.getElementById('grafico2'),
-        config2
-    );
+        const resultado_setor1 = new Chart(
+            document.getElementById('grafico2'),
+            config2
+        );
 
-}
+    }
 
-function Hectare17(){
-    id_hectare_atual.innerHTML = 'H17 Setores'
-    const labels = [
-        '12:00',
-        '13:00',
-        '14:00',
-        '15:00',
-        '16:00',
-        '17:00',
-    ];
+    function Hectare17() {
+        id_hectare_atual.innerHTML = 'H17 Setores'
+        const labels = [
+            '12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00',
+        ];
 
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'Temperatura',
-            backgroundColor: 'white',
-            borderColor: 'white',
-            data: [30, 29, 28, 25, 22, 23],
-        },
-        {
+        const data = {
             labels: labels,
-            label: 'Umidade',
-            backgroundColor: 'pink',
-            borderColor: 'rgb(0, 0, 255)',
-            data: [80, 82, 80, 85, 80, 83],
-        }]
-    };
+            datasets: [{
+                label: 'Temperatura',
+                backgroundColor: 'white',
+                borderColor: 'white',
+                data: [30, 29, 28, 25, 22, 23],
+            },
+            {
+                labels: labels,
+                label: 'Umidade',
+                backgroundColor: 'pink',
+                borderColor: 'rgb(0, 0, 255)',
+                data: [80, 82, 80, 85, 80, 83],
+            }]
+        };
 
-    const labels2 = [
-        'Janeiro',
-        'Feveiro',
-        'Março',
-        'Abril',
-        'Maio',
-        'Junho',
-    ];
+        const labels2 = [
+            'Janeiro',
+            'Feveiro',
+            'Março',
+            'Abril',
+            'Maio',
+            'Junho',
+        ];
 
-    const data2 = {
-        labels: labels2,
-        datasets: [{
-            label: 'Temperatura Média',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [22, 24, 27, 25, 23, 20, 18],
-        },
-        {
+        const data2 = {
             labels: labels2,
-            label: 'Umidade Média',
-            backgroundColor: 'rgb(0, 0, 255)',
-            borderColor: 'rgb(0, 0, 255)',
-            data: [90, 89, 93, 87, 88, 82],
-        }]
-    };
+            datasets: [{
+                label: 'Temperatura Média',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [22, 24, 27, 25, 23, 20, 18],
+            },
+            {
+                labels: labels2,
+                label: 'Umidade Média',
+                backgroundColor: 'rgb(0, 0, 255)',
+                borderColor: 'rgb(0, 0, 255)',
+                data: [90, 89, 93, 87, 88, 82],
+            }]
+        };
 
 
 
 
 
 
-    const config = {
-        type: 'line',
-        data: data,
-        options: {}
-    };
+        const config = {
+            type: 'line',
+            data: data,
+            options: {}
+        };
 
 
-    const config2 = {
-        type: 'bar',
-        data: data2,
-        options: {}
-    };
+        const config2 = {
+            type: 'bar',
+            data: data2,
+            options: {}
+        };
 
 
 
 
 
-    const resultado_setor2 = new Chart(
-        document.getElementById('grafico'),
-        config
-    );
+        const resultado_setor2 = new Chart(
+            document.getElementById('grafico'),
+            config
+        );
 
-    const resultado_setor1 = new Chart(
-        document.getElementById('grafico2'),
-        config2
-    );
+        const resultado_setor1 = new Chart(
+            document.getElementById('grafico2'),
+            config2
+        );
 
-}
+    }
 </script>
 
 

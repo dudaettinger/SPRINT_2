@@ -34,5 +34,4 @@
         Novo calculo
         </button>
         `
-        calculadora.style.margin = "100px 0"
         }
