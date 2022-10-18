@@ -29,7 +29,7 @@ function senhaValida() {
             `
         
         } else {
-
+            regra_senha.innerHTML = ""
             alerta.innerHTML = `
                 <p style="color: red;">
                     A senha deve conter letra minúscula,
@@ -39,7 +39,7 @@ function senhaValida() {
         }
 
     } else {
-        alerta.innerHTML = `
+        alerta.innerHTML += `
             <p style="color: red;">
             ${frase_alerta}
             </p>
