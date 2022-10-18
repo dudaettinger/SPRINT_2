@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
 
 .banner {
-    background-color: #2f5233;
+    background-image: url(../imgs/bgimgmain.jpeg);
     padding: 65px;
     background-size: cover;
     display: flex;
@@ -49,6 +49,13 @@
     font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: flex-end;
+}
+
+.in-campo:hover {
+    border-bottom: 2px solid green;
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .texto-input {

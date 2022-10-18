@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos/padraoestilo.css">
-    <link rel="stylesheet" href="./estilos/calculadora.css">
-    <link rel="icon" href="./imgs/icon_agrisoft.png">
-    <script src="./javascript/calculadora.js"></script>
-    <title>Agrisoft - Simulador Financeiro</title>
+    <link rel="stylesheet" href="./estilos/padraoestilo.css">
+    <link rel="stylesheet" href="./estilos/redefinir_senha.css">
+    <title>Agrisoft - Recuperação de Senha</title>
+    <link rel="icon" href="imgs/logo_agrisoft.png">
 </head>
+
 <body>
     <header>
         <img class="logo" src="imgs/icon_agrisoft.png" alt="logo">
@@ -24,36 +25,38 @@
     </header>
 
     <main>
-        <div class="container">
-            <div id="calculadora">
-                <li class="liLogo">
-                     <span class="fntTitulo">Simulador Financeiro</span>
-                </li>
-                 
-                <li class="liInput">
-                    <span class="fntTexto">Faturamento por hectare:</span>
-                </li>
-                <li class="liInput">
-                    <input class="input_valores" id="input_faturamento" placeholder="Faturamento">
-                </li>
 
-                <li class="liInput">
-                    <span class="fntTexto">Quatidade de hectares:</span>
-                </li>
-                <li class="liInput">
-                    <input class="input_valores" id="input_hec" type="number" placeholder="Unidade">
-                </li>
-            
-                <li class="liInput">
-                    <span class="fntTexto">Prejuizo por safra:</span>
-                </li>
-                <li class="liInput">
-                    <input class="input_valores" id="input_prejuizo" placeholder="Prejuízo"> 
-                </li>
+        <section class="inicio_site">
+            <div class="container">
+                <div class="filho">
+                   
+                    <span class="titulo">Redefinir Senha</span>
+                    <div class="campo">
+                        <label for="email">Email</label> <br>
+                        <input type="email" name="email" id="email" placeholder="email@email.com">
+                    </div>
+
+                    <div class="campo">
+                        <label for="senha">Nova senha</label> <br>
+                        <input type="password" name="senha" id="senha" placeholder="*********">
+                    </div> 
+
+                    <div class="campo">
+                        <label for="senha">Confirmação de senha</label> <br>
+                        <input type="password" name="senha" id="senha" placeholder="*********">
+                    </div> 
+
+                    <button class="botao_login">
+                        <a href="login.html">
+                            Redefinir
+                        </a>
+                        </button>
                 
-                <button class="botao1" onclick="calcular()">Calcular</button>         
-            </div>
-        </div>
+                </div>
+                
+                </div>
+        </section>
+
     </main>
 
     <footer>
@@ -90,4 +93,5 @@
     </footer>
 
 </body>
+
 </html>

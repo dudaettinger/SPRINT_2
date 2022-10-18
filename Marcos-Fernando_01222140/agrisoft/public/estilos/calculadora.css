@@ -8,6 +8,13 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.input_valores:hover {
+    border-bottom: 2px solid green;
+    -webkit-transform: scale(1.08);
+    -ms-transform: scale(1.08);
+    transform: scale(1.08);
+}
+
 button{
     background-color: aliceblue;
 }
@@ -25,7 +32,7 @@ button{
     overflow: hidden;
     background-size: cover;
     padding: 60px;
-    background-color: #2f5233;
+    background-image: url(../imgs/bgimgmain.jpeg);
 }
 
 .logo-calculadora{
@@ -143,4 +150,12 @@ button{
 
 .botao-funcao:hover {
     cursor: pointer;
+}
+
+#alerta {
+    color: red;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 15px;
 }

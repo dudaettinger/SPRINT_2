@@ -31,10 +31,10 @@
                 </li>
                  
                 <li class="liInput">
-                    <span class="fntTexto">Faturamento por hectare:</span>
+                    <span class="fntTexto">Faturamento por hectare (em R$):</span>
                 </li>
                 <li class="liInput">
-                    <input class="input_valores" id="input_faturamento" placeholder="Faturamento">
+                    <input class="input_valores" id="input_faturamento" placeholder="Faturamento por safra (Semestral)">
                 </li>
 
                 <li class="liInput">
@@ -45,13 +45,16 @@
                 </li>
             
                 <li class="liInput">
-                    <span class="fntTexto">Prejuizo por safra:</span>
+                    <span class="fntTexto">Prejuizo por hectare (em R$):</span>
                 </li>
                 <li class="liInput">
-                    <input class="input_valores" id="input_prejuizo" placeholder="Prejuízo"> 
+                    <input class="input_valores" id="input_prejuizo" placeholder="Prejuízo por safra (Semestral)"> 
                 </li>
+
+                <button class="botao1" onclick="calcular()">Calcular</button>
                 
-                <button class="botao1" onclick="calcular()">Calcular</button>         
+                <div id="alerta"></div>
+                
             </div>
         </div>
     </main>

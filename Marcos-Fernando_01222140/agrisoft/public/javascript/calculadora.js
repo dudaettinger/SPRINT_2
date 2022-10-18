@@ -11,6 +11,11 @@
         var help = prejuizo * 0.70
         var valor_final = receita - help
 
+        if (faturamento == 0 || hectares == 0 || prejuizo == 0 ) {
+
+            alerta.innerHTML = 'Favor preencher todos os campos'
+
+        } else {
 
         calculadora.innerHTML = `
         <div class="div-calc">
@@ -35,3 +40,4 @@
         </button>
         `
         }
+}

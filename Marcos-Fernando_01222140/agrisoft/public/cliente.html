@@ -30,26 +30,29 @@
                 
                 <div class="campo">
                     <label class="texto-input" for="email">Email</label><br>
-                    <input type="email" id="email" class="in-campo" placeholder="email@email.com">
+                    <input type="email" id="in_email" class="in-campo" placeholder="email@email.com">
                 </div>
 
                 <div class="campo">
                     <label class="texto-input" for="senha">Senha</label><br>
-                    <input type="password" id="senha" class="in-campo" placeholder="*********">
+                    <input type="password" id="in_senha" class="in-campo" placeholder="*********">
                 </div>
 
-                <button class="botao-login">
-                    <a href="usuario.html">
+                <a id="login_link" href="usuario.html">
+                    <button class="botao-login" onclick="login()">
                         Entrar
-                    </a>
-                </button>
+                    </button>
+                </a>
 
                 <p class="link">
-                    <a href="usuario.html">Esqueceu a sua senha?</a>
+                    <a href="redefinir_senha.html">Esqueci minha senha?</a>
                 </p>
+
                 <p class="link">
                     <a href="cadastro.html">Cadastre-se</a>
                 </p>
+
+                <div id="alerta"></div>
             </div>
         </section>
     </main>

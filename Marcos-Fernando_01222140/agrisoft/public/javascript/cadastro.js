@@ -22,7 +22,7 @@ function senhaValida() {
         var letraMinuscula = senha.match(/[a-z]/);
         var numeros = senha.match(/[0-9]/);
 
-        if (letraMaiuscula.length() > 0 && letraMinuscula.length() > 0 && numeros.length() > 0) {
+        if (letraMaiuscula && letraMinuscula && numeros) {
             
             alerta.innerHTML = `
                 Cadastro realizado com sucesso!
