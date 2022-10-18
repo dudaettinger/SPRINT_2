@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
 * {
     margin: 0;
@@ -20,18 +20,19 @@ header {
     justify-content: space-around;
     text-decoration: none;
     width: 100%;
+    /*position: fixed;*/
 }
 
 .logo {
     padding: 0;
-    margin: 0;
-    max-width: 100px;
+    margin: 10px;
+    max-width: 40px;
 }
 
 .menu-navegacao {
     margin: 0;
     display: flex;
-    gap: 50px;
+    gap: 40px;
 }
 
 .tracinho {
@@ -43,7 +44,7 @@ header {
 
 .menu-navegacao-item {
     font-weight: 600;
-    font-size: 15px;
+    font-size: 13px;
     color: aliceblue;
     font-family: 'Montserrat', sans-serif;
     justify-content: space-around;
@@ -52,7 +53,7 @@ header {
 .menu-navegacao-item:hover {
     opacity: 0.50;
     animation-delay: 5ms;
-    color: yellow;
+    color: rgb(124, 255, 124);
     border-radius: 10px;
 }
 
@@ -67,10 +68,9 @@ footer {
 }
 /*rodape*/
 .rodape {
-    margin: 20px;
+    margin: 5px;
     display: flex;
     gap: 30px;
-
 }
 
 .container-rodape {
@@ -86,8 +86,13 @@ footer {
 
 .asft {
     color: aliceblue;
-    margin: 20px;
+    margin: 5px;
     font-size: 10px;
+}
+
+.logo_rdp {
+    max-width: 55px;
+    margin: 15px 0;
 }
 
 /*contato*/
@@ -119,48 +124,4 @@ footer {
 
 .texto {
     color: aliceblue;
-}
-
-/* DIV DE SUGESTÕES E LAMENTAÇÕES */
-
-.assistencia {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.assistencia-texto {
-    color: aliceblue;
-}
-
-.textinho {
-    margin: 8px;
-    color: aliceblue;
-}
-
-.input_assist {
-    border-radius: 15px;
-    height: 25px;
-    font-family: 'Montserrat', sans-serif;    
-    width: 220px;
-    text-align: center;
-}
-
-.botao-assist {
-    color: black;
-    background-color: aliceblue;
-    border-radius: 15px;
-    padding: 3px;
-    margin: 20px 5px;
-    box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    width: 100px;
-    font-family: 'Montserrat', sans-serif;  
-    font-weight: 800;
-}
-
-.botao-assist:hover {
-    background-color: chartreuse;
-    opacity: 70%;
 }

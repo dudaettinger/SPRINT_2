@@ -7,7 +7,7 @@
 /* Configurações iniciais sobre os sensores
 DHT11, LM35, LDR5 e TCRT5000 */
 
-int dht_pin = A1;
+int dht_pin = A3;
 DHT dht_1 = DHT(dht_pin, dht_type); //pode-se configurar diversos sensores DHTxx
 
 int lm35_pin = A0, leitura_lm35 = 0;

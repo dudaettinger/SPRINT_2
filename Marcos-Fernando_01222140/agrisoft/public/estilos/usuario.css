@@ -164,7 +164,7 @@ color: black;
 /* Caixar dos setores */
 .setor1 {
     width: 40%;
-    height: 30vh;
+    height: 40vh;
     margin-top: -3vh;
     font-family: 'Kanit', sans-serif;
     font-weight: bolder;
@@ -180,7 +180,7 @@ color: black;
 
 .setor2 {
     width: 40%;
-    height: 30vh;
+    height: 40vh;
     font-family: 'Kanit', sans-serif;
     font-weight: bolder;
     font-size: x-large;
@@ -213,7 +213,7 @@ color: black;
 
 .text_setor_temp {
     width: 80%;
-    height: 100%;
+    height: 90%;
     border-radius: 10px;
     text-align: center;
     background-color: rgb(0, 0, 0, 0.5);
@@ -229,7 +229,7 @@ color: black;
 
 .text_setor_umid {
     width: 80%;
-    height: 100%;
+    height: 90%;
     border-radius: 10px;
     text-align: center;
     background-color: rgb(0, 0, 0, 0.5);

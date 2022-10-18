@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
 
 .input_valores {
     all: unset;
     width: 20vw;
     height: 5vh;
-    border-bottom: 0.4vh solid rgba(1, 131, 255, 1);
+    border-bottom: 0.4vh solid darkolivegreen;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -23,8 +23,9 @@ button{
     justify-content: space-evenly;
     align-items: center;
     overflow: hidden;
-    background-image: url("../imgs/background.jpg");
     background-size: cover;
+    padding: 60px;
+    background-color: #2f5233;
 }
 
 .logo-calculadora{
@@ -37,9 +38,7 @@ button{
 #calculadora{
     background-color: rgb(245, 236, 236);
     height: 100%;
-    width: 30%;
-    border-radius: 15px;
-    margin: 5%;
+    border-radius: 50px;
     display: flex;
     flex-direction: column;
     padding: 30px;
@@ -47,20 +46,21 @@ button{
 }
 
 .fntTitulo{
-    font-size: 3.2vh;
-    font-weight: 900;
-    color: rgba(28, 60, 89, 1);
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
     font-family: 'Montserrat', sans-serif;
 }
 
 .fntTexto {
-    font-size: 2.5vh;
-    font-weight: 900;
-    color: rgba(28, 60, 89, 1);
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
     height: 7vh;
     display: flex;
     align-items: flex-end;
     font-family: 'Montserrat', sans-serif;
+    margin: 10px;
 }
 
 .cont{
@@ -96,33 +96,51 @@ button{
 .botao1 {
     all: unset;
     color: rgba(255, 255, 255, 1);
-    font-weight: 400;
+    font-weight: 500;
     font-size: 15px;
     text-align: center;
     width: 100px;
     height: 40px;
     margin-top: 30px;
-    background-color: rgba(28, 60, 89, 1);
+    background-color: darkolivegreen;
     border-radius: 10px;
-    font-family: 'Montserrat', sans-serif;  
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*JAVASCRIPT*/
+
+.div-calc {
+    display: flex;
+    padding: 10px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-family: 'Montserrat', sans-serif; 
+    width: 500px;
+    flex-direction: column;
+}
+
+.div-calc h4 {
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .botao-funcao {
-    color: white;
-    background-color: rgba(28, 60, 89, 1);
-    border-radius: 15px;
-    padding: 3px;
-    margin: 20px 5px;
-    box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
+    all: unset;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
     width: 100px;
-    font-family: 'Montserrat', sans-serif;  
-    font-weight: 800;
+    height: 40px;
+    background-color: darkolivegreen;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 6px;
 }
 
-.centerJS {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    flex-direction: column;
+.botao-funcao:hover {
+    cursor: pointer;
 }
