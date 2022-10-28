@@ -33,15 +33,15 @@ const serial = async (
 ) => {
     let poolBancoDados = ''
 
-    if (AMBIENTE == 'desenvolvimento') {
+    if (AMBIENTE == 'producao') {
         poolBancoDados = mysql.createPool(
             {
                 // altere!
                 // CREDENCIAIS DO BANCO LOCAL - MYSQL WORKBENCH
                 host: 'localhost',
-                user: 'USUARIO_DO_BANCO_LOCAL',
-                password: 'SENHA_DO_BANCO_LOCAL',
-                database: 'DATABASE_LOCAL'
+                user: 'insertGrupo05',
+                password: 'insert',
+                database: 'sprint3'
             }
         ).promise();
     } else if (AMBIENTE == 'producao') {
@@ -97,7 +97,7 @@ const serial = async (
                 // -> altere nome da tabela e colunas se necessário
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> Importante! você deve ter o aquario de id 1 cadastrado.
-                sqlquery = `INSERT INTO medida (dht11_umidade, dht11_temperatura, luminosidade, lm35_temperatura, chave, momento, fk_aquario) VALUES (${dht11Umidade}, ${dht11Temperatura}, ${luminosidade}, ${lm35Temperatura}, ${chave}, CURRENT_TIMESTAMP, 1)`;
+                sqlquery = `INSERT INTO dadoSensor (dht11_umidade, dht11_temperatura, luminosidade, lm35_temperatura, chave, momento, fk_aquario) VALUES (${dht11Umidade}, ${dht11Temperatura}, ${luminosidade}, ${lm35Temperatura}, ${chave}, CURRENT_TIMESTAMP, 1)`;
 
                 // CREDENCIAIS DO BANCO REMOTO - SQL SERVER
                 // Importante! você deve ter criado o usuário abaixo com os comandos presentes no arquivo
@@ -121,8 +121,19 @@ const serial = async (
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> você deve ter o aquario de id 1 cadastrado.
                 await poolBancoDados.execute(
-                    'INSERT INTO medida (dht11_umidade, dht11_temperatura, luminosidade, lm35_temperatura, chave, momento, fk_aquario) VALUES (?, ?, ?, ?, ?, now(), 1)',
-                    [dht11Umidade, dht11Temperatura, luminosidade, lm35Temperatura, chave]
+                    'INSERT INTO dadoSensor (temperatura, temperatura2, temperatura3, temperatura4, temperatura5, umidade, umidade2, umidade3, umidade4, umidade5) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                    [
+                        TempProj,
+                        TempProj2,
+                        TempProj3,
+                        TempProj4,
+                        TempProj5,
+                        UmidProj,
+                        UmidProj2,
+                        UmidProj3,
+                        UmidProj4,
+                        UmidProj5
+                    ]
                 );
                 console.log("valores inseridos no banco: ", dht11Umidade + ", " + dht11Temperatura + ", " + luminosidade + ", " + lm35Temperatura + ", " + chave)
 
