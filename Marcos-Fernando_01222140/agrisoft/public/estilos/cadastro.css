@@ -11,7 +11,7 @@
 
 .caixa-formulario {
     width: 45%;
-    background-color: rgb(245, 236, 236);
+    background-color:rgba(255, 255, 255, 1);
     padding: 30px;
     display: flex;
     flex-direction: column;
