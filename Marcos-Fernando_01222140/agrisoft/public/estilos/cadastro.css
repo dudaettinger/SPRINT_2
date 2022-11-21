@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
 
-.banner {
+main {
     background-image: url(../imgs/bgimgmain.jpeg);
-    padding: 65px;
     background-size: cover;
+}
+
+.banner {
+    padding: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-form {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,6 +26,7 @@
     flex-direction: column;
     align-items: center;
     border-radius: 30px;
+    margin: 20px;
 }
 
 .campo {
