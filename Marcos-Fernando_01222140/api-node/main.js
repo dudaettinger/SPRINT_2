@@ -16,7 +16,7 @@ const HABILITAR_OPERACAO_INSERIR = true;
 // altere o valor da variável AMBIENTE para o valor desejado:
 // API conectada ao banco de dados remoto, SQL Server -> 'producao'
 // API conectada ao banco de dados local, MySQL Workbench - 'desenvolvimento'
-const AMBIENTE = 'desenvolvimento';
+const AMBIENTE = 'producao';
 
 const serial = async (
     valoresDht11TempProj,
@@ -97,16 +97,17 @@ const serial = async (
                 // -> altere nome da tabela e colunas se necessário
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> Importante! você deve ter o aquario de id 1 cadastrado.
-                sqlquery = `INSERT INTO dadoSensor (dht11_umidade, dht11_temperatura, luminosidade, lm35_temperatura, chave, momento, fk_aquario) VALUES (${dht11Umidade}, ${dht11Temperatura}, ${luminosidade}, ${lm35Temperatura}, ${chave}, CURRENT_TIMESTAMP, 1)`;
+                sqlquery = `INSERT INTO dadosensor (dataHora, temperatura, temperatura2, temperatura3, temperatura4, temperatura5, umidade, umidade2, umidade3, umidade4, umidade5) VALUES (now(), ${TempProj}, ${TempProj2}, ${TempProj3}, ${TempProj4}, ${TempProj5}, ${UmidProj}, ${UmidProj2}, ${UmidProj3}, ${UmidProj4}, ${UmidProj5})`;
 
                 // CREDENCIAIS DO BANCO REMOTO - SQL SERVER
                 // Importante! você deve ter criado o usuário abaixo com os comandos presentes no arquivo
                 // "script-criacao-usuario-sqlserver.sql", presente neste diretório.
-                const connStr = "Server=servidor-acquatec.database.windows.net;Database=bd-acquatec;User Id=usuarioParaAPIArduino_datawriter;Password=#Gf_senhaParaAPI;";
+                const connStr = "Server=tcp:agrisoft.database.windows.net,1433;Initial Catalog=agrisoft;Persist Security Info=False;User ID=agrisoft-g5;Password=	#Gfgrupo5;";
 
                 function inserirComando(conn, sqlquery) {
                     conn.query(sqlquery);
-                    console.log("valores inseridos no banco: ", dht11Umidade + ", " + dht11Temperatura + ", " + luminosidade + ", " + lm35Temperatura + ", " + chave)
+                    console.log("valores inseridos no banco: ", 
+                    TempProj + ";" + TempProj2 + ";" + TempProj3 + ";" + TempProj4 + ";" + TempProj5 + ";" + UmidProj + ";" + UmidProj2 + ";" + UmidProj3 + ";" + UmidProj4 + ";" + UmidProj5)
                 }
 
                 sql.connect(connStr)
@@ -121,7 +122,7 @@ const serial = async (
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> você deve ter o aquario de id 1 cadastrado.
                 await poolBancoDados.execute(
-                    'INSERT INTO dadoSensor (temperatura, temperatura2, temperatura3, temperatura4, temperatura5, umidade, umidade2, umidade3, umidade4, umidade5) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                    'INSERT INTO dadosensor (dataHora, temperatura, temperatura2, temperatura3, temperatura4, temperatura5, umidade, umidade2, umidade3, umidade4, umidade5) VALUES (now(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                     [
                         TempProj,
                         TempProj2,
@@ -136,7 +137,7 @@ const serial = async (
                     ]
                 );
                 console.log("valores inseridos no banco: ", 
-                TempProj, TempProj2, TempProj3, TempProj4, TempProj5, UmidProj, UmidProj2, UmidProj3, UmidProj4, UmidProj5)
+                TempProj + ";" + TempProj2 + ";" + TempProj3 + ";" + TempProj4 + ";" + TempProj5 + ";" + UmidProj + ";" + UmidProj2 + ";" + UmidProj3 + ";" + UmidProj4 + ";" + UmidProj5)
 
             } else {
                 throw new Error('Ambiente não configurado. Verifique o arquivo "main.js" e tente novamente.');
@@ -171,34 +172,34 @@ const servidor = (
     app.listen(SERVIDOR_PORTA, () => {
         console.log(`API executada com sucesso na porta ${SERVIDOR_PORTA}`);
     });
-    app.get('/sensores/TempProj', (_, response) => {
+    app.get('/sensores/dht11/TempProj', (_, response) => {
         return response.json(valoresDht11TempProj);
     });
-    app.get('/sensores/TempProj2', (_, response) => {
+    app.get('/sensores/dht11/TempProj2', (_, response) => {
         return response.json(valoresDht11TempProj2);
     });
-    app.get('/sensores/TempProj3', (_, response) => {
+    app.get('/sensores/dht11/TempProj3', (_, response) => {
         return response.json(valoresDht11TempProj3);
     });
-    app.get('/sensores/TempProj4', (_, response) => {
+    app.get('/sensores/dht11/TempProj4', (_, response) => {
         return response.json(valoresDh11TempProj4);
     });
-    app.get('/sensores/TempProj5', (_, response) => {
+    app.get('/sensores/dht11/TempProj5', (_, response) => {
         return response.json(valoresDh11TempProj5);
     });
-    app.get('/sensores/UmidProj', (_, response) => {
+    app.get('/sensores/dht11/UmidProj', (_, response) => {
         return response.json(valoresDht11UmidProj);
     });
-    app.get('/sensores/UmidProj2', (_, response) => {
+    app.get('/sensores/dht11/UmidProj2', (_, response) => {
         return response.json(valoresDht11UmidProj2);
     });
-    app.get('/sensores/UmidProj3', (_, response) => {
+    app.get('/sensores/dht11/UmidProj3', (_, response) => {
         return response.json(valoresDht11UmidProj3);
     });
-    app.get('/sensores/UmidProj4', (_, response) => {
+    app.get('/sensores/dht11/UmidProj4', (_, response) => {
         return response.json(valoresDh11UmidProj4);
     });
-    app.get('/sensores/UmidProj5', (_, response) => {
+    app.get('/sensores/dht11/UmidProj5', (_, response) => {
         return response.json(valoresDh11UmidProj5);
     });
 }

@@ -24,6 +24,8 @@ function senhaValida() {
 
         if (letraMaiuscula && letraMinuscula && numeros) {
             
+            regra_senha.innerHTML = ``
+
             alerta.innerHTML = `
                 Cadastro realizado com sucesso!
             `

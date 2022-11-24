@@ -1,10 +1,10 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Line Chart</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="./main.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
     <style>
         canvas {
@@ -102,8 +102,8 @@
                 }
             }
         );
+
         /* -- dht11TempProj2 -- */
-       
         var contextoDht11TempProj2 = document.getElementById('TempProj2').getContext('2d');
         contextoDht11TempProj2.canvas.width = 1000;
         contextoDht11TempProj2.canvas.height = 300;
@@ -143,7 +143,9 @@
                 }
             }
         );
+
        /* -- dht11TempProj3 -- */
+       
        var contextoDht11TempProj3 = document.getElementById('TempProj3').getContext('2d');
         contextoDht11TempProj3.canvas.width = 1000;
         contextoDht11TempProj3.canvas.height = 300;
@@ -183,7 +185,9 @@
                 }
             }
         );
+
        /* -- dht11TempProj4 -- */
+       
        var contextoDht11TempProj4 = document.getElementById('TempProj4').getContext('2d');
         contextoDht11TempProj4.canvas.width = 1000;
         contextoDht11TempProj4.canvas.height = 300;
@@ -223,8 +227,10 @@
                 }
             }
         );
-          /* -- dht11TempProj5 -- */
-          var contextoDht11TempProj5 = document.getElementById('TempProj5').getContext('2d');
+
+        /* -- dht11TempProj5 -- */
+        
+        var contextoDht11TempProj5 = document.getElementById('TempProj5').getContext('2d');
         contextoDht11TempProj5.canvas.width = 1000;
         contextoDht11TempProj5.canvas.height = 300;
         var TempProj5 = new Chart(
@@ -264,9 +270,9 @@
             }
         );
 
-
-     /* -- dht11UmidProj -- */
-     var contextoDht11UmidProj = document.getElementById('UmidProj').getContext('2d');
+        /* -- dht11UmidProj -- */
+        
+        var contextoDht11UmidProj = document.getElementById('UmidProj').getContext('2d');
         contextoDht11UmidProj.canvas.width = 1000;
         contextoDht11UmidProj.canvas.height = 300;
         var UmidProj = new Chart(
@@ -306,8 +312,9 @@
             }
         ); 
 
-         /* -- dht11UmidProj2 -- */
-         var contextoDht11UmidProj2 = document.getElementById('UmidProj2').getContext('2d');
+        /* -- dht11UmidProj2 -- */
+
+        var contextoDht11UmidProj2 = document.getElementById('UmidProj2').getContext('2d');
         contextoDht11UmidProj2.canvas.width = 1000;
         contextoDht11UmidProj2.canvas.height = 300;
         var UmidProj2 = new Chart(
@@ -347,8 +354,9 @@
             }
         ); 
 
-         /* -- dht11UmidProj3 -- */
-         var contextoDht11UmidProj3 = document.getElementById('UmidProj3').getContext('2d');
+        /* -- dht11UmidProj3 -- */
+        
+        var contextoDht11UmidProj3 = document.getElementById('UmidProj3').getContext('2d');
         contextoDht11UmidProj3.canvas.width = 1000;
         contextoDht11UmidProj3.canvas.height = 300;
         var UmidProj3 = new Chart(
@@ -388,8 +396,9 @@
             }
         ); 
 
-         /* -- dht11UmidProj4 -- */
-         var contextoDht11UmidProj4 = document.getElementById('UmidProj4').getContext('2d');
+        /* -- dht11UmidProj4 -- */
+        
+        var contextoDht11UmidProj4 = document.getElementById('UmidProj4').getContext('2d');
         contextoDht11UmidProj4.canvas.width = 1000;
         contextoDht11UmidProj4.canvas.height = 300;
         var UmidProj4 = new Chart(
@@ -429,8 +438,9 @@
             }
         ); 
 
-         /* -- dht11UmidProj5 -- */
-         var contextoDht11UmidProj5 = document.getElementById('UmidProj5').getContext('2d');
+        /* -- dht11UmidProj5 -- */
+        
+        var contextoDht11UmidProj5 = document.getElementById('UmidProj5').getContext('2d');
         contextoDht11UmidProj5.canvas.width = 1000;
         contextoDht11UmidProj5.canvas.height = 300;
         var UmidProj5 = new Chart(
@@ -469,15 +479,12 @@
                 }
             }
         ); 
-        
-
-
 
         var paginacao = {};
         var tempo = {};
         function obterDados(grafico, endpoint) {
             var http = new XMLHttpRequest();
-            http.open('GET', 'http://localhost:3300/sensores/' + endpoint, false);
+            http.open('GET', 'http://localhost:3300/sensores/' + endpoint, true);
             http.send(null);
             var valores = JSON.parse(http.responseText);
             if (paginacao[endpoint] == null) {
@@ -504,18 +511,19 @@
         }
 
         setInterval(() => {
-            obterDados(TempProj, '/sensores/TempProj');
-            obterDados(TempProj2, '/sensores/TempProj2');
-            obterDados(TempProj3, '/sensores/TempProj3');
-            obterDados(TempProj4, '/sensores/TempProj4');
-            obterDados(TempProj5, '/sensores/TempProj5');
+            obterDados(TempProj,  'sensores/tempProj');
+            obterDados(TempProj2, 'sensores/tempProj2');
+            obterDados(TempProj3, 'sensores/tempProj3');
+            obterDados(TempProj4, 'sensores/tempProj4');
+            obterDados(TempProj5, 'sensores/tempProj5');
             
-            obterDados(TempProj, '/sensores/UmidProj');
-            obterDados(TempProj2, '/sensores/UmidProj2');
-            obterDados(TempProj3, '/sensores/UmidProj3');
-            obterDados(TempProj4, '/sensores/UmidProj4');
-            obterDados(TempProj5, '/sensores/UmidProj5');
+            obterDados(TempProj,  'sensores/umidProj');
+            obterDados(TempProj2, 'sensores/umidProj2');
+            obterDados(TempProj3, 'sensores/umidProj3');
+            obterDados(TempProj4, 'sensores/umidProj4');
+            obterDados(TempProj5, 'sensores/umidProj5');
         }, 1000);
 
     </script>
 </body>
+</html>
