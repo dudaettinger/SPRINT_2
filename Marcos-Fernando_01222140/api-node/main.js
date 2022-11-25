@@ -91,18 +91,19 @@ const serial = async (
         valoresDh11UmidProj5.push(UmidProj5);
 
         if (HABILITAR_OPERACAO_INSERIR) {
+            var dataHora = Date();
             if (AMBIENTE == 'producao') {
                 // altere!
                 // Este insert irá inserir os dados na tabela "medida"
                 // -> altere nome da tabela e colunas se necessário
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> Importante! você deve ter o aquario de id 1 cadastrado.
-                sqlquery = `INSERT INTO dadosensor (dataHora, temperatura, temperatura2, temperatura3, temperatura4, temperatura5, umidade, umidade2, umidade3, umidade4, umidade5) VALUES (now(), ${TempProj}, ${TempProj2}, ${TempProj3}, ${TempProj4}, ${TempProj5}, ${UmidProj}, ${UmidProj2}, ${UmidProj3}, ${UmidProj4}, ${UmidProj5})`;
+                sqlquery = `INSERT INTO dadosensor (temperatura, temperatura2, temperatura3, temperatura4, temperatura5, umidade, umidade2, umidade3, umidade4, umidade5, dataHora) VALUES (${TempProj}, ${TempProj2}, ${TempProj3}, ${TempProj4}, ${TempProj5}, ${UmidProj}, ${UmidProj2}, ${UmidProj3}, ${UmidProj4}, ${UmidProj5}, '${dataHora}');`
 
                 // CREDENCIAIS DO BANCO REMOTO - SQL SERVER
                 // Importante! você deve ter criado o usuário abaixo com os comandos presentes no arquivo
                 // "script-criacao-usuario-sqlserver.sql", presente neste diretório.
-                const connStr = "Server=tcp:agrisoft.database.windows.net,1433;Initial Catalog=agrisoft;Persist Security Info=False;User ID=agrisoft-g5;Password=	#Gfgrupo5;";
+                const connStr = "Server=tcp:agrisoft.database.windows.net,1433;Initial Catalog=agrisoft;Persist Security Info=False;User ID=agrisoft-g5;Password={	#Gfgrupo5};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
                 function inserirComando(conn, sqlquery) {
                     conn.query(sqlquery);
