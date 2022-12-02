@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agrisoft - Cadastro</title>
+
+
+    <link rel="icon" href="assets/icon/icon_agrisoft.png">
+    <link rel="stylesheet" href="css/padraoestilo.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+
+
+</head>
+
+
+<body>
+
+    <!--header inicio-->
+    <header>
+        <img class="logo" src="assets/icon/icon_agrisoft.png" alt="logo">
+
+        <nav class="menu-navegacao">
+            <a class="menu-navegacao-item" href="index.html">Página Inicial</a>
+            <a class="menu-navegacao-item" href="index.html#sobre_nos">Sobre nós</a>
+            <a class="menu-navegacao-item" href="simulador.html">Simulador Financeiro</a>
+            <p class="tracinho">|</p>
+            <a class="menu-navegacao-item" href="cadastro.html">Cadastre-se</a>
+            <a class="menu-navegacao-item" href="login.html">Já sou cliente</a>
+        </nav>
+    </header>
+    <!--header fim-->
+
+    <section class="banner">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+        <div id="principal" class="caixa-formulario">
+            <p class="titulo">Bem vindo à <b>Agrisoft</b>!</p>
+            <div class="campo">
+                <label class="texto-input" for="nome">Nome:</label>
+                <input class="in-campo" type="text" id="nome_input" placeholder="Seu nome">
+            </div>
+            <div class="campo">
+                <label class="texto-input" for="email">E-mail:</label>
+                <input class="in-campo" type="email" id="email_input" placeholder="email@email.com">
+            </div>
+            <div class="campo">
+                <label class="texto-input" for="senha">Senha: <br>
+                </label>
+                <input class="in-campo" type="password" id="senha_input" placeholder="*********"  onkeyup="senhaValida()">
+            </div>
+            <div class="campo">
+                <label class="texto-input" for="confirmacao_senha">Confirmação de Senha:</label>
+                <input class="in-campo" type="password" id="confirmacao_senha_input" placeholder="*********"
+                    onkeyup="verificacao_senha()">
+            </div>
+            <div class="campo">
+                <label class="texto-input" for="cnpj">CNPJ Fazenda:</label>
+                <input class="in-campo" id="cnpj_input" placeholder="XX.XXX.XXX/0001-XX">
+            </div><br>
+            <div id="regra_senha">
+            </div>
+            <div id="alerta"></div><br>
+            <p class="texto-login">Já tem login? <a href="login.html">Login</a></p><br>
+            <button class="botao-cadastro" onclick="cadastrar()">Cadastrar</button><br>
+
+            <div id="div_aguardar" class="loading-div">
+                <img src="./assets/circle-loading.gif" id="loading-gif">
+            </div>
+        </div>
+
+       </section>
+
+        <!--footer inicio-->
+        <footer>
+        <!--CONTATOS E ICONES RODAPE SUPERIOR-->
+        <div class="div-contato">
+            <img class="logo_rdp" src="assets/imgs/logo_agrisoft.png" alt="logo_agrisoft">
+            <div class="contato">
+                <p class="contato-paragrafo">
+                    <img class="contato-logo" src="assets/imgs/facebook.png" alt="logo feice">
+                <p class="texto">AgriSoft</p>
+                </p>
+
+                <p class="contato-paragrafo">
+                    <img class="contato-logo" src="assets/imgs/instagram.png" alt="logo feice">
+                <p class="texto">@agrisoft</p>
+                </p>
+
+                <p class="contato-paragrafo">
+                    <img class="contato-logo" src="assets/imgs/twitter.png" alt="logo feice">
+                <p class="texto">@agrisoft</p>
+                </p>
+            </div>
+        </div>
+        <!--AQUI COMEÇA O RODAPE DO RODAPE-->
+        <div class="container-rodape">
+            <div class="rodape">
+                <a class="rodape-item" href="#">Políticas de Privacidade</a>
+                <a class="rodape-item" href="#">Termos de serviço</a>
+                <a class="rodape-item" href="#">Configurações de Cookies da Página</a>
+            </div>
+
+            <a class="asft" href="#">&copy;2022, AGRISOFT</a>
+        </div>
+        <!--footer fim-->
+    </footer>
+
+
+</body>
+
+</html>
+
+<script src="./js/funcoes.js"></script>
+
+<script>
+    function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var cnpjVar = cnpj_input.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || cnpjVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha os campos em branco";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 3000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuarios.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                cnpjServer: cnpjVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso!";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+
+   function verificacao_senha() {
+        var senha = senha_input.value;
+      var conf_senha = confirmacao_senha_input.value;
+
+       if (conf_senha != senha) {
+            alerta.innerHTML = `
+            <p style="color: red;">
+           As senhas devem ser iguais!
+             </p> 
+        `
+        } else {
+             alerta.innerHTML = ``
+         }
+     }
+
+     function senhaValida() {
+     var senha = senha_input.value;
+     var frase_alerta = "Não foi possível realizar o cadastro!<br> A senha deve ter 8 digitos!"
+     var frase_senha = "Cuidado, senha fraca!"
+     if (senha.length == 8 & senha == 12345678) {
+         alerta.innerHTML = `   <p style="color: red;">
+             ${frase_senha}
+             </p>`
+         } else if (senha.length < 8) {
+         alerta.innerHTML = `
+             <p style="color: red;">
+             ${frase_alerta}
+             </p>
+         `
+     }
+ }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
