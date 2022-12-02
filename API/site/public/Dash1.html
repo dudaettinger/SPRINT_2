@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/padraoestilo.css">
+    <link rel="stylesheet" href="css/Dash1.css">
+    <title>Agrisoft - User</title>
+    <link rel="icon" href="imgs/icon_agrisoft.png">
+
+    <script src="js/funcoes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./javascript/usuarios.js"></script>
+
+</head>
+
+<body onload="validarSessao(), atualizacaoPeriodica()"></body>
+    <div class="container" >
+
+        <h1 class="titulo_usuario">Agrisoft</h1>
+
+        <div class="div_imagem">
+            <img class="imagem_usuario" src="assets/icon/iconusuario.png" alt="">
+        </div>
+
+        <h4 class="nome_usuario">Olá,<span id="b_usuario">usuário</span>!</h4>
+
+        <div class="div_botoes">
+            <a href="Dash1.html"><button class="botoes_principais">Minha Safra</button></a>
+            <a href="Dash2.html"><button class="botoes_principais">Gráficos</button></a>
+            <button class="botao_sair" onclick="limparSessao()">
+                Sair
+            </button>
+
+             <a class="link_auvoDesk" target="_blank" href="https://agrotitan.auvo.com.br/Login#signin"><img class="img_auvoDesk" src="assets/imgs/help-desk.png" alt=""></a>
+        </div>
+
+    </div>
+
+    <main>
+        <div class="container2">
+            <div class="dash">
+                <select onclick="selecionar_hectare()" class="select_hectare_class"  id="select_hectare">
+                    <option class="option_hectare amarelo" value="1">Hectare 1</option>
+                    <option class="option_hectare verde"   value="1">Hectare 2</option>
+                    <option class="option_hectare verde"   value="1">Hectare 3</option>
+                    <option class="option_hectare verde"   value="1">Hectare 4</option>
+                    <option class="option_hectare vermelho"value="1">Hectare 5</option>
+                    <option class="option_hectare verde"   value="1">Hectare 6</option>
+                   
+                </select>
+                <h2 class="titulo_setor">Setor 1</h2>
+                <div class="container_setor um">
+                    <div id="resultado_setor1" class="setor1">
+                        <div id="text_setor_temp_box1" class="text_setor_temp um">Temperatura
+                            <span id="TEMP1" class="number_temp um ">28°C</span>
+                        </div>
+                    </div>
+                    <div id="resultado_setor1" class="setor1">
+                        <div  id="text_setor_temp_box2" class="text_setor_umid um">Umidade
+                            <span id="UMID1" class="number_umid um">23%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="titulo_setor">Setor 2</h2>
+                <div class="container_setor dois">
+                    <div id="resultado_setor2" class="setor2">
+                        <div id="text_setor_temp_box3" class="text_setor_temp dois">Temperatura
+                            <span id="TEMP2"  class="number_temp dois">32°C</span>
+                        </div>
+                    </div>
+                    <div id="resultado_setor2" class="setor2">
+                        <div id="text_setor_temp_box4" class="text_setor_umid dois">Umidade
+                            <span  id="UMID2"class="number_umid dois">20%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container3">
+            <div class="legenda">
+                <span class="legenda_cores vermelho"> <b>CRÍTICO </b></span>
+                <span class="legenda_cores amarelo">  <b>ALERTA  </b></span>
+                <span class="legenda_cores verde">    <b>IDEAL   </b></span>
+                <span class="legenda_cores azul">     <b>ALERTA  </b></span>
+                <span class="legenda_cores roxo">     <b>CRÍTICO </b> </span>
+            </div>
+
+            <div class="legenda_descricao_geral">   
+               <span class="texto_legenda"> <span class="legenda_descricao vermelho">vermelho</span><b style="color:white ; margin-left: 2vw;">Temperatura elevada em estado crítico(31°C a 40°C)</b></span>
+               <span class="texto_legenda"> <span class="legenda_descricao amarelo">amarelo</span><b style="color:white ; margin-left: 2vw;">Temperatura alarmante (31°C)</b></span>
+               <span class="texto_legenda"> <span class="legenda_descricao verde">verde</span><b style="color:white ; margin-left: 2vw;">Temperatura Ideal (20°C a  30°C)</b></span>
+               <span class="texto_legenda"> <span class="legenda_descricao azul">azul</span><b style="color:white ; margin-left: 2vw;">Temperatura alarmante(19°C)</b></span>
+               <span class="texto_legenda"> <span class="legenda_descricao roxo">roxo</span><b style="color:white ; margin-left: 2vw;">Temperatura baixa em estado crítico(10°C a 18°C)</b></span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
+<script>
+
+    
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+function limparSessao() {
+    //  aguardar();
+    sessionStorage.clear();
+    //  finalizarAguardar();
+    window.location = "../login.html";
+}
+
+function selecionar_hectare(){
+    var valor_select = Number(select_hectare.value)
+
+     // #42d353'             VERDE
+    //  yellow'              AMARELO
+    // 'red'                 VERMELHO
+    // rgb(67, 200, 253)'    AZUL
+    // rgb(51, 51, 173)      ROXO
+if(valor_select == 1){
+TEMP1.innerHTML= 20
+UMID1.innerHTML= 7
+UMID2.innerHTML= 66
+TEMP2.innerHTML= 33
+
+// TEMPERATURA SETOR 1 
+if(TEMP1.innerHTML >=20 && TEMP1.innerHTML <=30){
+    TEMP1.style.color='#42d353'
+    text_setor_temp_box1.style.boxShadow='10px 10px 10px #42d353'
+
+} else if( TEMP1.innerHTML > 30){
+    TEMP1.style.color='yellow'
+    text_setor_temp_box1.style.boxShadow='10px 10px 10px yellow'
+
+}  if(TEMP1.innerHTML >= 31 ){
+    TEMP1.style.color='red'
+    text_setor_temp_box1.style.boxShadow='10px 10px 10px red'
+
+} else if(TEMP1.innerHTML < 20 ){
+    TEMP1.style.color='rgb(67, 200, 253)'
+    text_setor_temp_box1.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
+
+}  if(TEMP1.innerHTML  < 19){
+    TEMP1.style.color='rgb(51, 51, 173) '
+    text_setor_temp_box1.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
+}
+ 
+// TEMPERATURA SETOR 2
+if(TEMP2.innerHTML >=20 && TEMP2.innerHTML <=30){
+    TEMP2.style.color='#42d353'
+    text_setor_temp_box4.style.boxShadow='10px 10px 10px #42d353'
+
+} else if( TEMP2.innerHTML > 30){
+    TEMP2.style.color='yellow'
+    text_setor_temp_box4.style.boxShadow='10px 10px 10px yellow'
+
+}  if(TEMP2.innerHTML >= 31 ){
+    TEMP2.style.color='red'
+    text_setor_temp_box4.style.boxShadow='10px 10px 10px red'
+
+} else if(TEMP2.innerHTML < 20 ){
+    TEMP2.style.color='rgb(67, 200, 253)'
+    text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
+
+}  if(TEMP2.innerHTML  < 19){
+    TEMP2.style.color='rgb(51, 51, 173) '
+    text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
+}
+
+// UMIDADE SETOR 1 
+if(UMID1.innerHTML >70 && UMID1.innerHTML <=80){
+    UMID1.style.color='#42d353'
+    text_setor_temp_box2.style.boxShadow='10px 10px 10px #42d353'
+
+} else if( UMID1.innerHTML <= 70){
+    UMID1.style.color='yellow'
+    text_setor_temp_box2.style.boxShadow='10px 10px 10px yellow'
+
+}  if(UMID1.innerHTML < 69 ){
+    UMID1.style.color='red'
+    text_setor_temp_box2.style.boxShadow='10px 10px 10px red'
+
+} else if(UMID1.innerHTML > 80 ){
+    UMID2.style.color='rgb(67, 200, 253)'
+    text_setor_temp_box2.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
+
+}  if(UMID2.innerHTML  >= 81){
+    UMID2.style.color='rgb(51, 51, 173) '
+    text_setor_temp_box2.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
+}
+
+//  UMIDADE SETOR 2
+if(UMID2.innerHTML >70 && UMID2.innerHTML <=80){
+    UMID2.style.color='#42d353'
+    text_setor_temp_box3.style.boxShadow='10px 10px 10px #42d353'
+
+} else if( UMID2.innerHTML <= 70){
+    UMID2.style.color='yellow'
+    text_setor_temp_box3.style.boxShadow='10px 10px 10px yellow'
+
+}  if(UMID2.innerHTML < 69 ){
+    UMID2.style.color='red'
+    text_setor_temp_box3.style.boxShadow='10px 10px 10px red'
+
+} else if(UMID2.innerHTML > 80 ){
+    UMID2.style.color='rgb(67, 200, 253)'
+    text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
+
+}  if(UMID2.innerHTML  >= 81){
+    UMID2.style.color='rgb(51, 51, 173) '
+    text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
+}
+
+// if(UMID1.innerHTML >= 70 && UMID1.innerHTML <= 80){
+//     UMID1.style.color='#42d353'
+//     text_setor_temp_box2.style.boxShadow='10px 10px 10px #42d353'
+// }
+// if(UMID2.innerHTML >= 70 && UMID2.innerHTML <= 80) {
+
+// }
+    // TEMP1.style.color='#42d353' 
+    // UMID1.style.color='#42d353'
+    // UMID2.style.color='#42d353'
+    // TEMP2.style.color='#42d353'
+    // // text_setor_temp_box1.style.boxShadow='10px 10px 10px #42d353'
+    // text_setor_temp_box2.style.boxShadow='10px 10px 10px #42d353'
+    // text_setor_temp_box3.style.boxShadow='10px 10px 10px #42d353'
+    // text_setor_temp_box4.style.boxShadow='10px 10px 10px #42d353'
+
+
+}
+
+//  if(valor_select == 2){
+
+//     TEMP1.style.color='yellow'
+//     UMID1.style.color='#42d353'
+//     TEMP2.style.color='#42d353'
+//     UMID2.style.color='yellow'
+//     text_setor_temp_box1.style.boxShadow='10px 10px 10px yellow'
+//     text_setor_temp_box2.style.boxShadow='10px 10px 10px #42d353'
+//     text_setor_temp_box3.style.boxShadow='10px 10px 10px #42d353'
+//     text_setor_temp_box4.style.boxShadow='10px 10px 10px yellow'
+
+//     TEMP1.innerHTML = '30°C'
+//     UMID1.innerHTML = '73%'
+//     TEMP2.innerHTML = '25°C'
+//     UMID2.innerHTML = '70%'
+
+   
+// }
+
+//  if(valor_select == 3){
+
+
+//     TEMP1.style.color='red'
+//     UMID1.style.color='#42d353'
+//     TEMP2.style.color='#42d353'
+//     UMID2.style.color='#42d353'
+//     text_setor_temp_box1.style.boxShadow='10px 10px 10px red'
+//     text_setor_temp_box2.style.boxShadow='10px 10px 10px #42d353'
+//     text_setor_temp_box3.style.boxShadow='10px 10px 10px #42d353'
+//     text_setor_temp_box4.style.boxShadow='10px 10px 10px #42d353'
+
+//     TEMP1.innerHTML = '34°C'
+//     UMID1.innerHTML = '73%'
+//     TEMP2.innerHTML = '25°C'
+//     UMID2.innerHTML = '73%'
+
+ 
+
+// }
+
+//  if(valor_select == 4){
+
+//     TEMP1.style.color='#42d353'
+//     UMID1.style.color='#42d353'
+//     TEMP2.style.color='rgb(67, 200, 253)'
+//     UMID2.style.color='rgb(67, 200, 253)'
+//     text_setor_temp_box1.style.boxShadow='10px 10px 10px #42d353'
+//     text_setor_temp_box2.style.boxShadow='10px 10px 10px #42d353'
+//     text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
+//     text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
+
+//     TEMP1.innerHTML = '24°C'
+//     UMID1.innerHTML = '73%'
+//     TEMP2.innerHTML = '20°C'
+//     UMID2.innerHTML = '80%'
+
+// }
+
+// else if(valor_select == 5){
+//     TEMP1.style.color='#42d353'
+//     UMID1.style.color='#42d353'
+//     TEMP2.style.color='#42d353'
+//     UMID2.style.color='rgb(51, 51, 173)'
+//     text_setor_temp_box1.style.boxShadow='10px 10px 10px #42d353'
+//     text_setor_temp_box2.style.boxShadow='10px 10px 10px #42d353'
+//     text_setor_temp_box3.style.boxShadow='10px 10px 10px #42d353'
+//     text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(51, 51, 173)'
+
+
+
+//     TEMP1.innerHTML = '25°C'
+//     UMID1.innerHTML = '73%'
+//     TEMP2.innerHTML = '22°C'
+//     UMID2.innerHTML = '65%'
+
+// }
+
+}
+
+</script>
