@@ -43,24 +43,24 @@
         <div class="container2">
             <div class="dash">
                 <select onclick="selecionar_hectare()" class="select_hectare_class"  id="select_hectare">
-                    <option class="option_hectare amarelo" value="1">Hectare 1</option>
+                    <option class="option_hectare vermelho" value="1">Hectare 1</option>
                     <option class="option_hectare verde"   value="2">Hectare 2</option>
-                    <option class="option_hectare verde"   value="3">Hectare 3</option>
-                    <option class="option_hectare verde"   value="4">Hectare 4</option>
-                    <option class="option_hectare vermelho"value="5">Hectare 5</option>
-                    <option class="option_hectare verde"   value="6">Hectare 6</option>
+                    <option class="option_hectare roxo"   value="3">Hectare 3</option>
+                    <option class="option_hectare amarelo"   value="4">Hectare 4</option>
+                    <option class="option_hectare verde"value="5">Hectare 5</option>
+                    <option class="option_hectare azul"   value="6">Hectare 6</option>
                    
                 </select>
                 <h2 class="titulo_setor">Setor 1</h2>
                 <div class="container_setor um">
                     <div id="resultado_setor1" class="setor1">
                         <div id="text_setor_temp_box1" class="text_setor_temp um">Temperatura
-                            <span id="TEMP1" class="number_temp um ">28°C</span>
+                            <span id="TEMP1" class="number_temp um ">31</span>
                         </div>
                     </div>
                     <div id="resultado_setor1" class="setor1">
                         <div  id="text_setor_temp_box2" class="text_setor_umid um">Umidade
-                            <span id="UMID1" class="number_umid um">23%</span>
+                            <span id="UMID1" class="number_umid um">23</span>
                         </div>
                     </div>
                 </div>
@@ -69,12 +69,12 @@
                 <div class="container_setor dois">
                     <div id="resultado_setor2" class="setor2">
                         <div id="text_setor_temp_box3" class="text_setor_temp dois">Temperatura
-                            <span id="TEMP2"  class="number_temp dois">32°C</span>
+                            <span id="TEMP2"  class="number_temp dois">31</span>
                         </div>
                     </div>
                     <div id="resultado_setor2" class="setor2">
                         <div id="text_setor_temp_box4" class="text_setor_umid dois">Umidade
-                            <span  id="UMID2"class="number_umid dois">20%</span>
+                            <span  id="UMID2"class="number_umid dois">20</span>
                         </div>
                     </div>
                 </div>
@@ -130,502 +130,91 @@ function selecionar_hectare(){
     // rgb(67, 200, 253)'    AZUL
     // rgb(51, 51, 173)      ROXO
 if(valor_select == 1){
-TEMP1.innerHTML= 20
-UMID1.innerHTML= 70
-UMID2.innerHTML= 66
-TEMP2.innerHTML= 33
 
-// TEMPERATURA SETOR 1 
-if(TEMP1.innerHTML >=20 && TEMP1.innerHTML <=30){
-    TEMP1.style.color='#42d353'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px #42d353'
+    //SELECT VERMELHO
+TEMP1.innerHTML= 25
+UMID1.innerHTML= 80
+UMID2.innerHTML= 77
+TEMP2.innerHTML= 26
 
-} else if( TEMP1.innerHTML > 30){
-    TEMP1.style.color='yellow'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px yellow'
+AnalitcsCard()
 
-}  if(TEMP1.innerHTML >= 31 ){
-    TEMP1.style.color='red'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px red'
-
-} else if(TEMP1.innerHTML < 20 ){
-    TEMP1.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(TEMP1.innerHTML  < 19){
-    TEMP1.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
 }
- 
-// TEMPERATURA SETOR 2
-if(TEMP2.innerHTML >=20 && TEMP2.innerHTML <=30){
-    TEMP2.style.color='#42d353'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px #42d353'
-
-} else if( TEMP2.innerHTML > 30){
-    TEMP2.style.color='yellow'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px yellow'
-
-}  if(TEMP2.innerHTML >= 31 ){
-    TEMP2.style.color='red'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px red'
-
-} else if(TEMP2.innerHTML < 20 ){
-    TEMP2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(TEMP2.innerHTML  < 19){
-    TEMP2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
-
-// UMIDADE SETOR 1 
-if(UMID1.innerHTML >70 && UMID1.innerHTML <=80){
-    UMID1.style.color='#42d353'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px #42d353'
-
-} else if( UMID1.innerHTML <= 70){
-    UMID1.style.color='yellow'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px yellow'
-
-}  if(UMID1.innerHTML < 69 ){
-    UMID1.style.color='red'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px red'
-
-} else if(UMID1.innerHTML > 80 ){
-    UMID2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(UMID2.innerHTML  >= 81){
-    UMID2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
-
-//  UMIDADE SETOR 2
-if(UMID2.innerHTML >70 && UMID2.innerHTML <=80){
-    UMID2.style.color='#42d353'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px #42d353'
-
-} else if( UMID2.innerHTML <= 70){
-    UMID2.style.color='yellow'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px yellow'
-
-}  if(UMID2.innerHTML < 69 ){
-    UMID2.style.color='red'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px red'
-
-} else if(UMID2.innerHTML > 80 ){
-    UMID2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(UMID2.innerHTML  >= 81){
-    UMID2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
-}
-
-
+//SELECT VERDE
 if(valor_select == 2){
-TEMP1.innerHTML= 30
-UMID1.innerHTML= 70
-UMID2.innerHTML= 81
-TEMP2.innerHTML= 39
+TEMP1.innerHTML= 24
+UMID1.innerHTML= 79
+UMID2.innerHTML= 75
+TEMP2.innerHTML= 26
 
-// TEMPERATURA SETOR 1 
-if(TEMP1.innerHTML >=20 && TEMP1.innerHTML <=30){
-    TEMP1.style.color='#42d353'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px #42d353'
+AnalitcsCard()
 
-} else if( TEMP1.innerHTML > 30){
-    TEMP1.style.color='yellow'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px yellow'
-
-}  if(TEMP1.innerHTML >= 31 ){
-    TEMP1.style.color='red'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px red'
-
-} else if(TEMP1.innerHTML < 20 ){
-    TEMP1.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(TEMP1.innerHTML  < 19){
-    TEMP1.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
 }
- 
-// TEMPERATURA SETOR 2
-if(TEMP2.innerHTML >=20 && TEMP2.innerHTML <=30){
-    TEMP2.style.color='#42d353'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px #42d353'
-
-} else if( TEMP2.innerHTML > 30){
-    TEMP2.style.color='yellow'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px yellow'
-
-}  if(TEMP2.innerHTML >= 31 ){
-    TEMP2.style.color='red'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px red'
-
-} else if(TEMP2.innerHTML < 20 ){
-    TEMP2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(TEMP2.innerHTML  < 19){
-    TEMP2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
-
-// UMIDADE SETOR 1 
-if(UMID1.innerHTML >70 && UMID1.innerHTML <=80){
-    UMID1.style.color='#42d353'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px #42d353'
-
-} else if( UMID1.innerHTML <= 70){
-    UMID1.style.color='yellow'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px yellow'
-
-}  if(UMID1.innerHTML < 69 ){
-    UMID1.style.color='red'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px red'
-
-} else if(UMID1.innerHTML > 80 ){
-    UMID2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(UMID2.innerHTML  >= 81){
-    UMID2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
-
-//  UMIDADE SETOR 2
-if(UMID2.innerHTML >70 && UMID2.innerHTML <=80){
-    UMID2.style.color='#42d353'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px #42d353'
-
-} else if( UMID2.innerHTML <= 70){
-    UMID2.style.color='yellow'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px yellow'
-
-}  if(UMID2.innerHTML < 69 ){
-    UMID2.style.color='red'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px red'
-
-} else if(UMID2.innerHTML > 80 ){
-    UMID2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(UMID2.innerHTML  >= 81){
-    UMID2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
-}
-
+//SELECT ROXO
 if(valor_select == 3){
-TEMP1.innerHTML= 21
-UMID1.innerHTML= 76
-UMID2.innerHTML= 59
-TEMP2.innerHTML= 24
-
-// TEMPERATURA SETOR 1 
-if(TEMP1.innerHTML >=20 && TEMP1.innerHTML <=30){
-    TEMP1.style.color='#42d353'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px #42d353'
-
-} else if( TEMP1.innerHTML > 30){
-    TEMP1.style.color='yellow'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px yellow'
-
-}  if(TEMP1.innerHTML >= 31 ){
-    TEMP1.style.color='red'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px red'
-
-} else if(TEMP1.innerHTML < 20 ){
-    TEMP1.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(TEMP1.innerHTML  < 19){
-    TEMP1.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
- 
-// TEMPERATURA SETOR 2
-if(TEMP2.innerHTML >=20 && TEMP2.innerHTML <=30){
-    TEMP2.style.color='#42d353'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px #42d353'
-
-} else if( TEMP2.innerHTML > 30){
-    TEMP2.style.color='yellow'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px yellow'
-
-}  if(TEMP2.innerHTML >= 31 ){
-    TEMP2.style.color='red'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px red'
-
-} else if(TEMP2.innerHTML < 20 ){
-    TEMP2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(TEMP2.innerHTML  < 19){
-    TEMP2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
-
-// UMIDADE SETOR 1 
-if(UMID1.innerHTML >70 && UMID1.innerHTML <=80){
-    UMID1.style.color='#42d353'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px #42d353'
-
-} else if( UMID1.innerHTML <= 70){
-    UMID1.style.color='yellow'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px yellow'
-
-}  if(UMID1.innerHTML < 69 ){
-    UMID1.style.color='red'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px red'
-
-} else if(UMID1.innerHTML > 80 ){
-    UMID2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(UMID2.innerHTML  >= 81){
-    UMID2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
-
-//  UMIDADE SETOR 2
-if(UMID2.innerHTML >70 && UMID2.innerHTML <=80){
-    UMID2.style.color='#42d353'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px #42d353'
-
-} else if( UMID2.innerHTML <= 70){
-    UMID2.style.color='yellow'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px yellow'
-
-}  if(UMID2.innerHTML < 69 ){
-    UMID2.style.color='red'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px red'
-
-} else if(UMID2.innerHTML > 80 ){
-    UMID2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(UMID2.innerHTML  >= 81){
-    UMID2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
-}
-
-if(valor_select == 4){
-TEMP1.innerHTML= 17
-UMID1.innerHTML= 91
-UMID2.innerHTML= 87
-TEMP2.innerHTML= 22
-
-// TEMPERATURA SETOR 1 
-if(TEMP1.innerHTML >=20 && TEMP1.innerHTML <=30){
-    TEMP1.style.color='#42d353'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px #42d353'
-
-} else if( TEMP1.innerHTML > 30){
-    TEMP1.style.color='yellow'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px yellow'
-
-}  if(TEMP1.innerHTML >= 31 ){
-    TEMP1.style.color='red'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px red'
-
-} else if(TEMP1.innerHTML < 20 ){
-    TEMP1.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(TEMP1.innerHTML  < 19){
-    TEMP1.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
- 
-// TEMPERATURA SETOR 2
-if(TEMP2.innerHTML >=20 && TEMP2.innerHTML <=30){
-    TEMP2.style.color='#42d353'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px #42d353'
-
-} else if( TEMP2.innerHTML > 30){
-    TEMP2.style.color='yellow'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px yellow'
-
-}  if(TEMP2.innerHTML >= 31 ){
-    TEMP2.style.color='red'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px red'
-
-} else if(TEMP2.innerHTML < 20 ){
-    TEMP2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(TEMP2.innerHTML  < 19){
-    TEMP2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
-
-// UMIDADE SETOR 1 
-if(UMID1.innerHTML >70 && UMID1.innerHTML <=80){
-    UMID1.style.color='#42d353'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px #42d353'
-
-} else if( UMID1.innerHTML <= 70){
-    UMID1.style.color='yellow'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px yellow'
-
-}  if(UMID1.innerHTML < 69 ){
-    UMID1.style.color='red'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px red'
-
-} else if(UMID1.innerHTML > 80 ){
-    UMID2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(UMID2.innerHTML  >= 81){
-    UMID2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
-
-//  UMIDADE SETOR 2
-if(UMID2.innerHTML >70 && UMID2.innerHTML <=80){
-    UMID2.style.color='#42d353'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px #42d353'
-
-} else if( UMID2.innerHTML <= 70){
-    UMID2.style.color='yellow'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px yellow'
-
-}  if(UMID2.innerHTML < 69 ){
-    UMID2.style.color='red'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px red'
-
-} else if(UMID2.innerHTML > 80 ){
-    UMID2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(UMID2.innerHTML  >= 81){
-    UMID2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
-}
-
-
-if(valor_select == 5){
-TEMP1.innerHTML= 35
-UMID1.innerHTML= 60
-UMID2.innerHTML= 62
+TEMP1.innerHTML= 30
+UMID1.innerHTML= 80
+UMID2.innerHTML= 88
 TEMP2.innerHTML= 29
 
-// TEMPERATURA SETOR 1 
-if(TEMP1.innerHTML >=20 && TEMP1.innerHTML <=30){
-    TEMP1.style.color='#42d353'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px #42d353'
+AnalitcsCard()
 
-} else if( TEMP1.innerHTML > 30){
-    TEMP1.style.color='yellow'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px yellow'
-
-}  if(TEMP1.innerHTML >= 31 ){
-    TEMP1.style.color='red'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px red'
-
-} else if(TEMP1.innerHTML < 20 ){
-    TEMP1.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(TEMP1.innerHTML  < 19){
-    TEMP1.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box1.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
- 
-// TEMPERATURA SETOR 2
-if(TEMP2.innerHTML >=20 && TEMP2.innerHTML <=30){
-    TEMP2.style.color='#42d353'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px #42d353'
-
-} else if( TEMP2.innerHTML > 30){
-    TEMP2.style.color='yellow'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px yellow'
-
-}  if(TEMP2.innerHTML >= 31 ){
-    TEMP2.style.color='red'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px red'
-
-} else if(TEMP2.innerHTML < 20 ){
-    TEMP2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(TEMP2.innerHTML  < 19){
-    TEMP2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
 }
 
-// UMIDADE SETOR 1 
-if(UMID1.innerHTML >70 && UMID1.innerHTML <=80){
-    UMID1.style.color='#42d353'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px #42d353'
+//SELECT AMARELO
+if(valor_select == 4){
+TEMP1.innerHTML= 30
+UMID1.innerHTML= 71
+UMID2.innerHTML= 73
+TEMP2.innerHTML= 31
 
-} else if( UMID1.innerHTML <= 70){
-    UMID1.style.color='yellow'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px yellow'
+AnalitcsCard()
 
-}  if(UMID1.innerHTML < 69 ){
-    UMID1.style.color='red'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px red'
-
-} else if(UMID1.innerHTML > 80 ){
-    UMID2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(UMID2.innerHTML  >= 81){
-    UMID2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box2.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
 }
 
-//  UMIDADE SETOR 2
-if(UMID2.innerHTML >70 && UMID2.innerHTML <=80){
-    UMID2.style.color='#42d353'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px #42d353'
+// SELECT VERDE
+if(valor_select == 5){
+TEMP1.innerHTML= 21
+UMID1.innerHTML= 79
+UMID2.innerHTML= 76
+TEMP2.innerHTML= 26
 
-} else if( UMID2.innerHTML <= 70){
-    UMID2.style.color='yellow'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px yellow'
+AnalitcsCard()
 
-}  if(UMID2.innerHTML < 69 ){
-    UMID2.style.color='red'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px red'
-
-} else if(UMID2.innerHTML > 80 ){
-    UMID2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
-
-}  if(UMID2.innerHTML  >= 81){
-    UMID2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
 }
 
+// SELECT AZUL
 if(valor_select == 6){
-TEMP1.innerHTML= 25
-UMID1.innerHTML= 72
-UMID2.innerHTML= 59
-TEMP2.innerHTML= 32
+TEMP1.innerHTML= 28
+UMID1.innerHTML= 80
+UMID2.innerHTML= 81
+TEMP2.innerHTML= 29
 
+AnalitcsCard()
+
+}
+
+
+
+}
+
+function AnalitcsCard(){
+
+    
 // TEMPERATURA SETOR 1 
 if(TEMP1.innerHTML >=20 && TEMP1.innerHTML <=30){
     TEMP1.style.color='#42d353'
     text_setor_temp_box1.style.boxShadow='10px 10px 10px #42d353'
 
-} else if( TEMP1.innerHTML > 30){
+}  if( TEMP1.innerHTML > 30){
     TEMP1.style.color='yellow'
     text_setor_temp_box1.style.boxShadow='10px 10px 10px yellow'
 
-}  if(TEMP1.innerHTML >= 31 ){
+}  if(TEMP1.innerHTML > 31 ){
     TEMP1.style.color='red'
     text_setor_temp_box1.style.boxShadow='10px 10px 10px red'
 
-} else if(TEMP1.innerHTML < 20 ){
+}  if(TEMP1.innerHTML < 20 ){
     TEMP1.style.color='rgb(67, 200, 253)'
     text_setor_temp_box1.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
 
@@ -637,23 +226,23 @@ if(TEMP1.innerHTML >=20 && TEMP1.innerHTML <=30){
 // TEMPERATURA SETOR 2
 if(TEMP2.innerHTML >=20 && TEMP2.innerHTML <=30){
     TEMP2.style.color='#42d353'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px #42d353'
+    text_setor_temp_box3.style.boxShadow='10px 10px 10px #42d353'
 
-} else if( TEMP2.innerHTML > 30){
+}  if( TEMP2.innerHTML > 30){
     TEMP2.style.color='yellow'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px yellow'
+    text_setor_temp_box3.style.boxShadow='10px 10px 10px yellow'
 
-}  if(TEMP2.innerHTML >= 31 ){
+}  if(TEMP2.innerHTML > 31 ){
     TEMP2.style.color='red'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px red'
+    text_setor_temp_box3.style.boxShadow='10px 10px 10px red'
 
-} else if(TEMP2.innerHTML < 20 ){
+}  if(TEMP2.innerHTML < 20 ){
     TEMP2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
+    text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
 
 }  if(TEMP2.innerHTML  < 19){
     TEMP2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
+    text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
 }
 
 // UMIDADE SETOR 1 
@@ -661,7 +250,7 @@ if(UMID1.innerHTML >70 && UMID1.innerHTML <=80){
     UMID1.style.color='#42d353'
     text_setor_temp_box2.style.boxShadow='10px 10px 10px #42d353'
 
-} else if( UMID1.innerHTML <= 70){
+}  if( UMID1.innerHTML <= 70){
     UMID1.style.color='yellow'
     text_setor_temp_box2.style.boxShadow='10px 10px 10px yellow'
 
@@ -669,36 +258,35 @@ if(UMID1.innerHTML >70 && UMID1.innerHTML <=80){
     UMID1.style.color='red'
     text_setor_temp_box2.style.boxShadow='10px 10px 10px red'
 
-} else if(UMID1.innerHTML > 80 ){
-    UMID2.style.color='rgb(67, 200, 253)'
+} if(UMID1.innerHTML > 80 ){
+    UMID1.style.color='rgb(67, 200, 253)'
     text_setor_temp_box2.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
 
-}  if(UMID2.innerHTML  >= 81){
-    UMID2.style.color='rgb(51, 51, 173) '
+}  if(UMID1.innerHTML  > 81){
+    UMID1.style.color='rgb(51, 51, 173) '
     text_setor_temp_box2.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
 }
 
 //  UMIDADE SETOR 2
 if(UMID2.innerHTML >70 && UMID2.innerHTML <=80){
     UMID2.style.color='#42d353'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px #42d353'
+    text_setor_temp_box4.style.boxShadow='10px 10px 10px #42d353'
 
-} else if( UMID2.innerHTML <= 70){
+} if( UMID2.innerHTML <= 70){
     UMID2.style.color='yellow'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px yellow'
+    text_setor_temp_box4.style.boxShadow='10px 10px 10px yellow'
 
 }  if(UMID2.innerHTML < 69 ){
     UMID2.style.color='red'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px red'
+    text_setor_temp_box4.style.boxShadow='10px 10px 10px red'
 
-} else if(UMID2.innerHTML > 80 ){
+} if(UMID2.innerHTML > 80 ){
     UMID2.style.color='rgb(67, 200, 253)'
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
+    text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(67, 200, 253)'
 
-}  if(UMID2.innerHTML  >= 81){
+}  if(UMID2.innerHTML  >81){
     UMID2.style.color='rgb(51, 51, 173) '
-    text_setor_temp_box3.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
-}
+    text_setor_temp_box4.style.boxShadow='10px 10px 10px rgb(51, 51, 173) '
 }
 }
 
