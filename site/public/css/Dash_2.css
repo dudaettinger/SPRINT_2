@@ -494,9 +494,7 @@ main {
     height: 15vh;
     margin-left: 5.3vw;
     margin-bottom: 3vh;
-    border-color: rgb(0, 0, 0);
-    border-width: 2px;
-    border-style: groove;
+    background-color: rgb(0, 0, 0, 0.3);
 }
 
 .botoes_principais {

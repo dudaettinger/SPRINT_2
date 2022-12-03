@@ -38,8 +38,8 @@
                     Sair
                 </button>
 
-                <a class="link_auvoDesk" href="https://github.com/Nathalia-Obi/AGRISOFT"><img class="img_auvoDesk" src="assets/imgs/help-desk.png" alt=""></a>
-        </div>
+                <a class="link_auvoDesk" target="_blank" href="https://agrotitan.auvo.com.br/Login#signin"><img class="img_auvoDesk" src="assets/imgs/help-desk.png" alt=""></a>
+            </div>
     </div>
 
     <main>
@@ -92,8 +92,8 @@
             </div>
 
             <div class="legenda_descricao_geral">
-               <span class="texto_legenda"> <span class="legenda_descricao vermelho">TEMPERATURA</span> <b style="color:white ; margin-left: 2vw ; font-size: 30px; text-shadow: 0px 0px 5px red;">20°C - 30°C</b></span>
-               <span class="texto_legenda"> <span class="legenda_descricao amarelo">UMIDADE</span>   <b style="color:white ; margin-left: 2vw    ; font-size: 30px; text-shadow: 0px 0px 5px rgb(0, 119, 255);">70%  -  80%</b></span>
+               <span class="texto_legenda"> <span class="legenda_descricao vermelho">TEMPERATURA</span> <b style="color:white ; margin-left: 2vw ; font-size: 30px; text-shadow: 0px 0px 5px green;">20°C - 30°C</b></span>
+               <span class="texto_legenda"> <span class="legenda_descricao amarelo">UMIDADE</span>   <b style="color:white ; margin-left: 2vw    ; font-size: 30px; text-shadow: 0px 0px 5px green;">70%  -  80%</b></span>
             </div>
         </div>
 
@@ -110,27 +110,62 @@ function limparSessao() {
     window.location = "../login.html";
 }
 
-const labels = [
-        '13:00',
-        '14:00',
-        '15:00',
-        '16:00',
-        '17:00',
-        '18:00',
-        '19:00',
-        '20:00',
-        '21:00',
-        '22:00',
-        '05:00',
-        '06:00',
-        '07:00',
-        '08:00',
-        '09:00',
-        '10:00',
-        '11:00',
-        '12:00'
-    ];
+//Obter dados do grafico
+function obterDadosGrafico1() {
 
+//alterarTitulo(idAquario)
+
+if (proximaAtualizacao != undefined) {
+    clearTimeout(proximaAtualizacao);
+}
+
+fetch(`/medidas/ultimas/${idSensor}`, { cache: 'no-store' }).then(function (response) {
+    if (response.ok) {
+        response.json().then(function (resposta) {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+            resposta.reverse();
+
+            plotarGrafico(resposta, idSensor);
+        });
+    } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+    }
+})
+    .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+    });
+}
+
+
+
+
+    function plotarGrafico1(resposta, idAquario) {
+
+    console.log('iniciando plotagem do gráfico...');
+
+    // Criando estrutura para plotar gráfico - labels
+    const labels = [
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00',
+            '18:00',
+            '19:00',
+            '20:00',
+            '21:00',
+            '22:00',
+            '05:00',
+            '06:00',
+            '07:00',
+            '08:00',
+            '09:00',
+            '10:00',
+            '11:00',
+            '12:00'
+        ];
+
+    // Criando estrutura para plotar gráfico - dados
     const data = {
         labels: labels,
         datasets: [{
@@ -141,6 +176,77 @@ const labels = [
                 26.5, 26.7, 26.8, 27.5, 28.5, 26, 27, 28, 29],
         }],
     };
+
+    console.log('----------------------------------------------')
+    console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+    console.log(resposta)
+
+    // Inserindo valores recebidos em estrutura para plotar o gráfico
+    for (i = 0; i < resposta.length; i++) {
+        var registro = resposta[i];
+        labels.push(registro.momento_grafico);
+        dados.datasets[0].data.push(registro.umidade);
+        dados.datasets[1].data.push(registro.temperatura);
+    }
+
+    console.log('----------------------------------------------')
+    console.log('O gráfico será plotado com os respectivos valores:')
+    console.log('Labels:')
+    console.log(labels)
+    console.log('Dados:')
+    console.log(dados.datasets)
+    console.log('----------------------------------------------')
+
+    // Criando estrutura para plotar gráfico - config
+    const config = {
+        type: 'line',
+        data: dados,
+    };
+
+    // Adicionando gráfico criado em div na tela
+    let myChart = new Chart(
+        document.getElementById(`myChartCanvas${idAquario}`),
+        config
+    );
+
+    setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
+    }
+
+
+
+    const labels = [
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00',
+            '18:00',
+            '19:00',
+            '20:00',
+            '21:00',
+            '22:00',
+            '05:00',
+            '06:00',
+            '07:00',
+            '08:00',
+            '09:00',
+            '10:00',
+            '11:00',
+            '12:00'
+        ];
+
+    // Criando estrutura para plotar gráfico - dados
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Temperatura (°C) por hora',
+            backgroundColor: '#99ff66',
+            borderColor: '#99ff66',
+            data: [30, 29, 28, 27.5, 27, 26, 25.5, 25.7, 25, 24, 24.7, 24.5, 23.5, 23, 23, 23.7, 25.5,
+                26.5, 26.7, 26.8, 27.5, 28.5, 26, 27, 28, 29],
+        }],
+    };
+
 
     const labels2 = [
         '13:00',
