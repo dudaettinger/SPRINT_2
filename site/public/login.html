@@ -42,6 +42,7 @@
             <div class="campo">
                 <label class="texto-input" for="senha">Senha</label><br>
                 <input type="password" id="senha_input" class="in-campo" placeholder="*********">
+               
             </div>
 
                 <button class="botao-login" onclick="entrar()">
@@ -101,6 +102,19 @@
 </html>
 
 <script src="js/funcoes.js"></script>
+
+<script>
+function revelar_senha(){
+if(senha_input.type == password){
+senha_input.type = text
+} else{
+    senha_input.type = password
+}
+
+}
+
+
+</script>
 
 <script>
 

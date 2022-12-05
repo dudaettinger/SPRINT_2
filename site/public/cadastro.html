@@ -54,11 +54,13 @@
                 <label class="texto-input" for="senha">Senha: <br>
                 </label>
                 <input class="in-campo" type="password" id="senha_input" placeholder="*********">
+               
             </div>
             <div class="campo">
                 <label class="texto-input" for="confirmacao_senha">Confirmação de Senha:</label>
                 <input class="in-campo" type="password" id="confirmacao_senha_input" placeholder="*********"
                     onkeyup="verificacao_senha()">
+                   
             </div>
             <div class="campo">
                 <label class="texto-input" for="tel_fixo">Telefone fixo:</label>
@@ -70,7 +72,8 @@
             </div>
             <div class="campo">
                 <label class="texto-input" for="cnpj">CNPJ Fazenda:</label>
-                <input class="in-campo" id="cnpj_input" placeholder="XX.XXX.XXX/0001-XX">
+                <input class="in-campo" id="cnpj_input" placeholder="XX.XXX.XXX/0001-XX"
+                onkeyup="verificacao_cnpj()">
             </div><br>
             <div id="regra_senha">
             </div>
@@ -193,6 +196,19 @@
 
         return false;
     }
+
+   function verificacao_cnpj(){
+    var CNPJ = cnpj_input.value
+if(CNPJ.length <14 || CNPJ.length > 14){
+    alerta.innerHTML = `
+    <p style="color: red;">
+        CNPJ invalido, deve conter 14 Digitos
+             </p> `
+} else{
+    alerta.innerHTML =''
+}
+
+   }
 
 
    function verificacao_senha() {

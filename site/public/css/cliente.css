@@ -105,3 +105,27 @@
     height: 50px;
     width: 50px;
   }
+
+  
+  .input_revelar_senha{
+    position: relative;
+    height: 10px;
+    width: 30px;
+   margin-left: -20px;
+
+    background-image: url(../assets/imgs/olho_fechado.png.png);
+    background-size: cover;
+    background-color: rgb(0, 0, 0,0);
+    border: none;
+    border-radius: 2px;
+  }
+
+  
+  .input_revelar_senha:hover{
+    cursor: pointer;
+    background-image: url(../assets/imgs/olho.png.png);
+    background-size: cover;
+    height: 20px;
+    width: 33px; 
+
+  }
