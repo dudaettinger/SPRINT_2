@@ -6,7 +6,7 @@ var sqlServerConfig = {
     server: "agrisoft.database.windows.net",
     database: "agrisoft",
     user: "agrisoft-g5",
-    password: "  #Gfgrupo5",
+    password: "	#Gfgrupo5",
     pool: {
         max: 10,
         min: 0,
