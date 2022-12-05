@@ -65,7 +65,7 @@ function carregarDados() {
                 console.log("Dados recebidos: ", JSON.stringify(resposta));
 
                 for (let i = 0; i < resposta.length; i++) {
-                    mes.push(nomeMes(resposta[i].mes));
+                    mes.push(nomeMes(resposta[i].mes) + " / " + resposta[i].ano);
                     temperaturamensal.push(resposta[i].media_temperatura);
                     umidademensal.push(resposta[i].media_umidade);
                 }

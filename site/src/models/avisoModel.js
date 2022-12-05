@@ -2,19 +2,37 @@ var database = require("../database/config");
 
 function listar() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
-    var instrucao = `
-    select temperatura, umidade, date_format(dataHora,'%H:%m') as hora from dadosSensor order by idDados desc limit 9;
-    `;
+    var instrucao = ''
+    if (process.env.AMBIENTE_PROCESSO == "producao") {
+        instrucao = `
+        SELECT * FROM (SELECT TOP 9 id, CONCAT(DATEPART(HOUR, [dataHora]) ,':',DATEPART(MINUTE, [dataHora])) AS hora FROM dadosensor ORDER BY id DESC) AS t1 ORDER BY id;
+        `;
+    } else {
+        instrucao = `
+        SELECT * FROM (SELECT *, DATE_FORMAT(dataHora,'%H:%i') AS hora FROM dadosSensor ORDER BY idDados DESC LIMIT 9) AS t1 ORDER BY idDados;
+        `;
+
+    }
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
 function listarMes() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
-    var instrucao = `
-    select round(avg(temperatura),1) as media_temperatura, round(avg(umidade),1) as media_umidade,
-    month(dataHora) as mes from dadosSensor group by month(dataHora) order by idDados desc limit 9;
-    `;
+    var instrucao = "";
+
+    if (process.env.AMBIENTE_PROCESSO == "producao") {
+        instrucao = `
+        SELECT * FROM (SELECT TOP 9 ROUND(AVG(temperatura),1) AS media_temperatura, ROUND(AVG(umidade),1) AS media_umidade,
+        MONTH(dataHora) AS mes, YEAR(dataHora) AS ano FROM dadosensor GROUP BY YEAR(dataHora), MONTH(dataHora) ORDER BY mes DESC) AS t1 ORDER BY ano;
+        `;
+    } else {
+        instrucao = `
+        SELECT * FROM (SELECT ROUND(AVG(temperatura),1) AS media_temperatura, ROUND(AVG(umidade),1) AS media_umidade, MONTH(dataHora) AS mes, YEAR(dataHora) as ano
+        FROM dadosSensor GROUP BY YEAR(dataHora), MONTH(dataHora) ORDER BY MONTH(dataHora) DESC LIMIT 9) AS t1 ORDER BY ano;
+        `;
+
+    }
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }

@@ -32,7 +32,9 @@
 
     <section class="container">
         <div class="filho">
-            <span class="titulo">Bem vindo de volta!</span>
+            <span class="titulo" style="background-image:url(../public/assets/imgs/olho.png.png) ;">Bem vindo de
+                volta!</span>
+
 
             <div class="campo">
                 <label class="texto-input" for="email">Email</label><br>
@@ -42,12 +44,14 @@
             <div class="campo">
                 <label class="texto-input" for="senha">Senha</label><br>
                 <input type="password" id="senha_input" class="in-campo" placeholder="*********">
-               
+                <img src="assets/imgs/olho_fechado.png.png" class="input_revelar_senha" onclick="revelar_senha()"
+                    id="imagem_revelar_senha">
+
             </div>
 
-                <button class="botao-login" onclick="entrar()">
-                    Entrar
-                </button>
+            <button class="botao-login" onclick="entrar()">
+                Entrar
+            </button>
 
 
             <p class="link">
@@ -104,25 +108,29 @@
 <script src="js/funcoes.js"></script>
 
 <script>
-function revelar_senha(){
-if(senha_input.type == password){
-senha_input.type = text
-} else{
-    senha_input.type = password
-}
+    function revelar_senha() {
+        var senha = senha_input.value
 
-}
+        if (senha_input.type == 'password') {
+            senha_input.type = 'text'
+            imagem_revelar_senha.src = "assets/imgs/olho.png.png";
+            imagem_revelar_senha.style.height = "22px"
+        } else {
+            senha_input.type = 'password'
+            imagem_revelar_senha.src = "assets/imgs/olho_fechado.png.png";
+            imagem_revelar_senha.style.height = "10px"
+        }
+
+
+    }
 
 
 </script>
 
 <script>
 
-
-b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
     function entrar() {
-     /*aguardar();*/
+        /*aguardar();*/
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
@@ -132,9 +140,6 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
             mensagem_erro.innerHTML = "Preencha os campos em branco";
             /*finalizarAguardar();*/
             return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
         }
 
         console.log("FORM LOGIN: ", emailVar);
@@ -187,8 +192,5 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
         return false;
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
 
 </script>

@@ -54,13 +54,17 @@
                 <label class="texto-input" for="senha">Senha: <br>
                 </label>
                 <input class="in-campo" type="password" id="senha_input" placeholder="*********">
-               
+                <img src="assets/imgs/olho_fechado.png.png" class="input_revelar_senha" onclick="revelar_senha_um()"
+                    id="imagem_revelar_senha_um">
+
             </div>
             <div class="campo">
                 <label class="texto-input" for="confirmacao_senha">Confirmação de Senha:</label>
                 <input class="in-campo" type="password" id="confirmacao_senha_input" placeholder="*********"
                     onkeyup="verificacao_senha()">
-                   
+                <img src="assets/imgs/olho_fechado.png.png" class="input_revelar_senha" onclick="revelar_senha_dois()"
+                    id="imagem_revelar_senha_dois">
+
             </div>
             <div class="campo">
                 <label class="texto-input" for="tel_fixo">Telefone fixo:</label>
@@ -72,8 +76,7 @@
             </div>
             <div class="campo">
                 <label class="texto-input" for="cnpj">CNPJ Fazenda:</label>
-                <input class="in-campo" id="cnpj_input" placeholder="XX.XXX.XXX/0001-XX"
-                onkeyup="verificacao_cnpj()">
+                <input class="in-campo" id="cnpj_input" placeholder="XX.XXX.XXX/0001-XX" onkeyup="verificacao_cnpj()">
             </div><br>
             <div id="regra_senha">
             </div>
@@ -86,10 +89,10 @@
             </div>
         </div>
 
-       </section>
+    </section>
 
-        <!--footer inicio-->
-        <footer>
+    <!--footer inicio-->
+    <footer>
         <!--CONTATOS E ICONES RODAPE SUPERIOR-->
         <div class="div-contato">
             <img class="logo_rdp" src="assets/imgs/logo_agrisoft.png" alt="logo_agrisoft">
@@ -129,6 +132,43 @@
 </html>
 
 <script src="./js/funcoes.js"></script>
+
+<script>
+    function revelar_senha_um() {
+
+
+        if (senha_input.type == 'password') {
+            senha_input.type = 'text'
+            imagem_revelar_senha_um.src = "assets/imgs/olho.png.png";
+            imagem_revelar_senha_um.style.height = "20px"
+        } else {
+            senha_input.type = 'password'
+            imagem_revelar_senha_um.src = "assets/imgs/olho_fechado.png.png";
+            imagem_revelar_senha_um.style.height = "10px"
+        }
+
+
+    }
+
+
+    function revelar_senha_dois() {
+
+        if (confirmacao_senha_input.type == 'password') {
+            confirmacao_senha_input.type = 'text';
+            imagem_revelar_senha_dois.src = "assets/imgs/olho.png.png";
+            imagem_revelar_senha_dois.style.height = "20px";
+        } else {
+            confirmacao_senha_input.type = 'password';
+            imagem_revelar_senha_dois.src = "assets/imgs/olho_fechado.png.png";
+            imagem_revelar_senha_dois.style.height = "10px"
+        }
+
+
+
+    }
+
+
+</script>
 
 <script>
     function cadastrar() {
@@ -197,35 +237,35 @@
         return false;
     }
 
-   function verificacao_cnpj(){
-    var CNPJ = cnpj_input.value
-if(CNPJ.length <14 || CNPJ.length > 14){
-    alerta.innerHTML = `
+    function verificacao_cnpj() {
+        var CNPJ = cnpj_input.value
+        if (CNPJ.length < 14 || CNPJ.length > 14) {
+            alerta.innerHTML = `
     <p style="color: red;">
         CNPJ invalido, deve conter 14 Digitos
              </p> `
-} else{
-    alerta.innerHTML =''
-}
+        } else {
+            alerta.innerHTML = ''
+        }
 
-   }
+    }
 
 
-   function verificacao_senha() {
+    function verificacao_senha() {
         var senha = senha_input.value;
         var conf_senha = confirmacao_senha_input.value;
 
-       if (conf_senha != senha) {
+        if (conf_senha != senha) {
             alerta.innerHTML = `
             <p style="color: red;">
            As senhas devem ser iguais!
              </p> 
         `
         } else {
-             alerta.innerHTML = ``
-         }
-     }
-     function senhaValida() {
+            alerta.innerHTML = ``
+        }
+    }
+    function senhaValida() {
         var senha = senha_input.value;
         var conf_senha = confirmacao_senha_input.value;
         var frase_alerta = "Não foi possível realizar o cadastro!<br> A senha deve ter 8 digitos!"

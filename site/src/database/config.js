@@ -5,8 +5,8 @@ var sql = require('mssql');
 var sqlServerConfig = {
     server: "agrisoft.database.windows.net",
     database: "agrisoft",
-    user: "agrisoft",
-    password: "     #Gfgrupo5",
+    user: "agrisoft-g5",
+    password: "  #Gfgrupo5",
     pool: {
         max: 10,
         min: 0,
