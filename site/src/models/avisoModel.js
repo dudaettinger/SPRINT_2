@@ -5,7 +5,7 @@ function listar() {
     var instrucao = ''
     if (process.env.AMBIENTE_PROCESSO == "producao") {
         instrucao = `
-        SELECT * FROM (SELECT TOP 9 id, CONCAT(DATEPART(HOUR, [dataHora]) ,':',DATEPART(MINUTE, [dataHora])) AS hora FROM dadosensor ORDER BY id DESC) AS t1 ORDER BY id;
+        SELECT * FROM (SELECT TOP 9 *, CONCAT(DATEPART(HOUR, [dataHora]) ,':',DATEPART(MINUTE, [dataHora])) AS hora FROM dadosensor ORDER BY id DESC) AS t1 ORDER BY id;
         `;
     } else {
         instrucao = `
@@ -24,13 +24,12 @@ function listarMes() {
     if (process.env.AMBIENTE_PROCESSO == "producao") {
         instrucao = `
         SELECT * FROM (SELECT TOP 9 ROUND(AVG(temperatura),1) AS media_temperatura, ROUND(AVG(umidade),1) AS media_umidade,
-        MONTH(dataHora) AS mes, YEAR(dataHora) AS ano FROM dadosensor GROUP BY YEAR(dataHora), MONTH(dataHora) ORDER BY mes DESC) AS t1 ORDER BY ano;
+ MONTH(dataHora) AS mes, YEAR(dataHora) AS ano FROM dadosensor GROUP BY YEAR(dataHora), MONTH(dataHora) ORDER BY ano DESC) AS t1 ORDER BY ano;
         `;
     } else {
-        instrucao = `
-        SELECT * FROM (SELECT ROUND(AVG(temperatura),1) AS media_temperatura, ROUND(AVG(umidade),1) AS media_umidade, MONTH(dataHora) AS mes, YEAR(dataHora) as ano
-        FROM dadosSensor GROUP BY YEAR(dataHora), MONTH(dataHora) ORDER BY MONTH(dataHora) DESC LIMIT 9) AS t1 ORDER BY ano;
-        `;
+        instrucao = `SELECT * FROM (SELECT idDados, ROUND(AVG(temperatura),1) AS media_temperatura, ROUND(AVG(umidade),1) AS media_umidade, MONTH(dataHora) AS mes, YEAR(dataHora) as ano
+        FROM dadosSensor GROUP BY YEAR(dataHora), MONTH(dataHora) ORDER BY MONTH(dataHora) DESC LIMIT 9) AS t1 ORDER BY idDados;
+        `
 
     }
     console.log("Executando a instrução SQL: \n" + instrucao);

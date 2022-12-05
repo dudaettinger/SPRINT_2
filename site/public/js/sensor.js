@@ -245,39 +245,7 @@ function criarGraficos() {
         }
     };
 
-    const config5 = {
-        type: 'pie',
-        data: data5,
-        options: {
-            color: 'white',
-            responsive: true,
-            scales: {
-                y: {
-                    ticks: { color: 'white', beginAtZero: true }
-                },
-                x: {
-                    ticks: { color: 'white', beginAtZero: true }
-                }
-            }
-        }
-    };
-
-    const config6 = {
-        type: 'pie',
-        data: data6,
-        options: {
-            color: 'white',
-            responsive: true,
-            scales: {
-                y: {
-                    ticks: { color: 'white', beginAtZero: true }
-                },
-                x: {
-                    ticks: { color: 'white', beginAtZero: true }
-                }
-            }
-        }
-    };
+  
 
     const resultado_setor1 = new Chart(
         document.getElementById('grafico'),
