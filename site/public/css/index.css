@@ -72,22 +72,41 @@ html {
     align-items: center;
     text-align: center;
     margin: 10px;
-    background-color: lightgreen;
+    background-color: rgb(0, 97, 68);
+    color: white;
     border-radius: 15px;
     padding: 20px;
     width: 30%;
     font-family: 'Montserrat', sans-serif;
     box-shadow: 5px 5px 5px 3px rgba(25, 25, 25, 0.3);
+    
 }
+
+
 
 .card h3 {
     font-weight: 800;
+    text-shadow: 0px 0px 3px rgb(0, 0, 0);
 }
 
 .card p {
     font-weight: 600;
+    
 }
 
 .img-card {
     max-width: 100px;
+}
+.planta{
+    animation: plantaIndex 5s infinite ease-in-out;
+}
+
+@keyframes plantaIndex {
+
+ 25%{ color: goldenrod;}
+ 50%{ color: rgb(107, 141, 38);}
+ 75%{ color: rgb(41, 158, 123);}
+ 90%{ color: rgb(55, 126, 14);}
+ 100%{color: black;}
+   
 }

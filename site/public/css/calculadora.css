@@ -33,7 +33,11 @@ button{
     background-size: cover;
     padding: 60px;
     background-image: url(../assets/imgs/bgimgmain.jpeg);
+  
+   
 }
+
+
 
 .logo-calculadora{
     max-width: 150px;

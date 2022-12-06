@@ -1,7 +1,7 @@
 
-if (sessionStorage.NOME_USUARIO == null) {
-    location = 'login.html'
-}
+// if (sessionStorage.NOME_USUARIO == null) {
+//     location = 'login.html'
+// }
 
 
 var horas = [];
@@ -33,10 +33,10 @@ function recarregarGrafico() {
     temperaturamensal = [];
     umidademensal = [];
 
-    carregarDados()
+    carregarDadosGraficoLinha()
 }
 
-function carregarDados() {
+function carregarDadosGraficoLinha() {
 
     fetch("/avisos/listar").then(function (resposta) {
         if (resposta.ok) {
@@ -50,6 +50,8 @@ function carregarDados() {
                     umidades.push(resposta[i].umidade);
                 }
 
+                carregarDadosGraficoBarra()
+
             });
         } else {
             throw ('Houve um erro na API!');
@@ -58,6 +60,10 @@ function carregarDados() {
         console.error(resposta);
     });
 
+}
+
+
+function carregarDadosGraficoBarra() {
     fetch("/avisos/listar_mes").then(function (resposta) {
         if (resposta.ok) {
 
